@@ -1,0 +1,206 @@
+---
+// Responsive FAQ Section with expandable items
+const faqs = [
+  {
+    question: "Tut das weh?",
+    answer:
+      "Die Behandlung ist in der Regel sehr gut verträglich. Ich verwende spezielle 33-Gauge-Nadeln mit ultrafeiner Spitze und silikonbeschichteter Oberfläche – so wird der Einstich kaum gespürt.",
+  },
+  {
+    question: "Wie lange hält das Ergebnis?",
+    answer:
+      "Die Wirkung entfaltet sich innerhalb von 3–5 Tagen, das volle Ergebnis ist nach ca. 14 Tagen sichtbar. Die Haltbarkeit beträgt in der Regel 3–4 Monate.",
+  },
+  {
+    question: "Was muss ich vor der Behandlung beachten?",
+    answer:
+      "Bitte 24 Stunden vorher keinen Alkohol trinken und möglichst auf blutverdünnende Medikamente wie Aspirin, Voltaren oder Ibuprofen verzichten.",
+  },
+  {
+    question: "Was passiert, wenn ich einen Termin absagen muss?",
+    answer:
+      "Eine Absage bis spätestens 24 Stunden vorher ist kein Problem. Kurzfristigere Absagen oder Nichterscheinen können in Rechnung gestellt werden.",
+  },
+  {
+    question: "Wer behandelt mich?",
+    answer:
+      "Die Behandlung erfolgt ausschliesslich durch mich persönlich: Dr. Nicolas Scheffbuch, Facharzt für Allgemeinmedizin (D) mit Weiterbildung in ästhetischer Medizin.",
+  },
+  {
+    question: "Wie kann ich einen Termin vereinbaren?",
+    answer:
+      "Termine erfolgen direkt über das Kosmetikstudio Beauty Cosmetics St. Gallen. Kontaktinformationen finden Sie weiter unten.",
+  },
+];
+---
+
+<section class="faq-section" id="faq">
+  <div class="faq-container">
+    <h2 class="faq-title">FAQ – Häufige Fragen</h2>
+    <div class="faq-list">
+      {
+        faqs.map((faq, idx) => (
+          <div class="faq-item" id={`faq-item-${idx}`}>
+            <button
+              class="faq-question"
+              aria-expanded="false"
+              aria-controls={`faq-answer-${idx}`}
+              data-faq-toggle={`faq-answer-${idx}`}>
+              <span>{faq.question}</span>
+              <svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M6 9l6 6 6-6"
+                  stroke="#091331"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div class="faq-answer" id={`faq-answer-${idx}`}>
+              <p>{faq.answer}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <script type="module" is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".faq-question").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const answerId = this.getAttribute("data-faq-toggle");
+          const answer = document.getElementById(answerId);
+          const parent = this.closest(".faq-item");
+          const arrow = this.querySelector(".faq-arrow");
+          const expanded = this.getAttribute("aria-expanded") === "true";
+          // Collapse all others
+          document.querySelectorAll(".faq-item").forEach((item) => {
+            if (item !== parent) {
+              item.classList.remove("open");
+              item
+                .querySelector(".faq-question")
+                .setAttribute("aria-expanded", "false");
+              item.querySelector(".faq-answer").style.maxHeight = "0";
+              item.querySelector(".faq-answer").style.opacity = "0";
+              item.querySelector(".faq-answer").style.padding = "0 1.2rem";
+              item.querySelector(".faq-arrow").style.transform = "rotate(0deg)";
+            }
+          });
+          if (!expanded) {
+            parent.classList.add("open");
+            this.setAttribute("aria-expanded", "true");
+            answer.style.maxHeight = "500px";
+            answer.style.opacity = "1";
+            answer.style.padding = "1rem 1.2rem";
+            arrow.style.transform = "rotate(180deg)";
+          } else {
+            parent.classList.remove("open");
+            this.setAttribute("aria-expanded", "false");
+            answer.style.maxHeight = "0";
+            answer.style.opacity = "0";
+            answer.style.padding = "0 1.2rem";
+            arrow.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+      // Initialize all answers as collapsed
+      document.querySelectorAll(".faq-answer").forEach((ans) => {
+        ans.style.maxHeight = "0";
+        ans.style.opacity = "0";
+        ans.style.padding = "0 1.2rem";
+      });
+    });
+  </script>
+  <style>
+    .faq-section {
+      width: 100%;
+      background: #fff;
+      padding: 3rem 0;
+      display: flex;
+      justify-content: center;
+    }
+    .faq-container {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .faq-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #091331;
+      text-align: left;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      border-radius: 12px;
+      background-image: linear-gradient(
+        40deg,
+        var(--color--secondary-3) 11%,
+        #e5ecf91a 50%,
+        var(--color--secondary-3) 87%
+      );
+      box-shadow: 0 2px 8px 0 rgba(9, 19, 49, 0.04);
+      overflow: hidden;
+      border: 1px solid #e5ecf9;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item.open {
+      box-shadow: 0 4px 16px 0 rgba(9, 19, 49, 0.08);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #091331;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .faq-question:hover,
+    .faq-item.open .faq-question {
+      background: #e5ecf9;
+    }
+    .faq-arrow {
+      transition: transform 0.3s;
+    }
+    .faq-answer {
+      background: #fff;
+      color: #222;
+      font-size: 1rem;
+      line-height: 1.6;
+      padding: 0 1.2rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    @media (max-width: 767px) {
+      .faq-title {
+        font-size: 1.3rem;
+      }
+      .faq-container {
+        padding: 0 0.5rem;
+      }
+      .faq-question {
+        font-size: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
+      }
+      .faq-answer {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</section>

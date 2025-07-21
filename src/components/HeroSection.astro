@@ -1,0 +1,248 @@
+---
+// Hero section component extracted from index.astro
+---
+
+<section class="hero-section" id="start">
+  <div class="hero-shadow-image-wrap">
+    <img
+      src="png-01_1png-01.avif"
+      loading="lazy"
+      alt="Shadow Image"
+      class="hero-shadow-image"
+    />
+  </div>
+  <div data-w-id="53ad0e5e-a245-1c48-bc1a-29cdbece4091" class="hero-wrapper">
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="hero-title-wrap hero-title">
+        <h1 data-w-id="70578a58-bc50-ecc6-2def-5ecf216048ac" class="hero-title">
+          Dr. Nicolas Scheffbuch
+        </h1>
+        <h2 class="hero-subtitle">Ästhetische Medizin</h2>
+      </div>
+      <div class="w-layout-grid grid-hero">
+        <div
+          data-w-id="f9007791-5903-0bd3-bade-c68157b5f755"
+          class="hero-rating-wrap">
+          <div class="hero-text-content">
+            <span
+              >Botulinumtoxin-Behandlungen in St. Gallen – persönlich, präzise,
+              natürlich</span
+            >
+          </div>
+          <a href="tel:+41712222022" class="button-primary-2 call-now-btn"
+            >Jetzt anrufen</a
+          >
+        </div>
+        <div
+          data-w-id="9f2cad1f-3109-1be8-4d28-bfb1f7722088"
+          class="hero-image-wrap">
+          <img src="drscheffbuch.JPG" loading="lazy" alt="" />
+        </div>
+        <div
+          data-w-id="1b9e2bc5-2f44-5e83-ce50-0ec3d95cffd4"
+          class="hero-content-wrap">
+          <p>
+            Minimalinvasive Ästhetik auf höchstem Niveau – direkt im
+            Kosmetikstudio <br />Beauty Cosmetics, St. Gallen.<br /> Alle Behandlungen
+            werden von mir, Dr. Nicolas Scheffbuch, persönlich durchgeführt.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    background-image: linear-gradient(
+      180deg,
+      var(--color--secondary-3),
+      var(--color--transparent)
+    );
+    margin-top: -170px;
+    padding-top: 160px;
+    padding-bottom: 90px;
+    position: relative;
+  }
+  .hero-shadow-image-wrap {
+    z-index: 0;
+    height: 1100px;
+    position: absolute;
+    inset: 0% 0% auto auto;
+  }
+  .hero-shadow-image {
+    height: 100%;
+  }
+  .hero-wrapper {
+    z-index: 99;
+    position: relative;
+  }
+  .hero-title-wrap {
+    z-index: 1;
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-family: var(--font-family--heading);
+    margin-bottom: 5rem;
+    font-size: 8vw;
+    font-weight: 600;
+    line-height: 1.3em;
+  }
+  .hero-subtitle {
+    font-family: var(--font-family--heading);
+    font-size: 3rem;
+    font-weight: 500;
+    margin-top: -2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  .grid-hero {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    grid-template-rows: auto;
+    grid-template-columns: 0.5fr auto 0.5fr;
+    align-items: center;
+    margin-top: 10px;
+    display: grid;
+  }
+  .hero-rating-wrap {
+    text-align: center;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+  }
+  .hero-text-content {
+    font-family: var(--font-family--heading);
+    color: var(--color--primary-1);
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4em;
+  }
+  .hero-image-wrap {
+    border: 8px solid var(--color--white);
+    border-radius: var(--border-radius--rounded);
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+  }
+  .hero-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-content-wrap {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    text-align: right;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    display: flex;
+  }
+  @media screen and (min-width: 1280px) {
+    .hero-section {
+      margin-top: -140px;
+      padding-top: 140px;
+      padding-bottom: 100px;
+    }
+    .grid-hero {
+      grid-column-gap: 50px;
+      grid-row-gap: 50px;
+      margin-top: -60px;
+    }
+    .hero-text-content {
+      font-size: 28px;
+    }
+    .hero-image-wrap {
+      width: 500px;
+      height: 500px;
+    }
+    .hero-content-wrap {
+      grid-column-gap: 41px;
+      grid-row-gap: 41px;
+    }
+  }
+  @media screen and (min-width: 1920px) {
+    .hero-section {
+      margin-top: -140px;
+      padding-top: 140px;
+      padding-bottom: 140px;
+    }
+    .grid-hero {
+      grid-column-gap: 50px;
+      grid-row-gap: 50px;
+      grid-template-columns: 0.5fr auto 0.6fr;
+      margin-top: -70px;
+    }
+    .hero-image-wrap {
+      width: 500px;
+      height: 500px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .hero-section {
+      padding-bottom: 70px;
+    }
+    .grid-hero {
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      margin-top: -60px;
+    }
+    .hero-text-content {
+      font-size: 20px;
+    }
+    .hero-image-wrap {
+      width: 270px;
+      height: 270px;
+    }
+    .hero-content-wrap {
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .hero-section {
+      padding-top: 180px;
+      padding-bottom: 50px;
+    }
+    .hero-title {
+      font-size: 50px;
+    }
+    .grid-hero {
+      grid-template-columns: 1fr;
+    }
+    .hero-rating-wrap {
+      text-align: center;
+      flex-flow: column;
+      justify-content: flex-start;
+      align-items: center;
+      display: flex;
+    }
+    .hero-image-wrap {
+      width: 100%;
+      height: 100%;
+    }
+    .hero-content-wrap {
+      text-align: center;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: 479px) {
+    .hero-section {
+      padding-top: 180px;
+      padding-bottom: 50px;
+    }
+    .hero-title {
+      font-size: 42px;
+    }
+    .grid-hero {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

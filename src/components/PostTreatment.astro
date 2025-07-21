@@ -1,0 +1,97 @@
+---
+// Appointment Meta section component extracted from index.astro
+---
+
+<section class="section-spacing-rem">
+  <div class="w-layout-blockcontainer container w-container">
+    <h1 class="section-title">Nach der Behandlung</h1>
+    <div class="w-layout-grid grid-contact-meta">
+      <div class="contact-meta-item bg-linear-2 contact-meta-inline">
+        <div class="contact-meta-rounded bg-primary-1">
+          <img
+            src="sleep.svg"
+            loading="eager"
+            alt=""
+            class="contact-meta-icon"
+          />
+        </div>
+        <h2 class="heading-h6">4–6 Stunden nicht hinlegen</h2>
+      </div>
+      <div class="contact-meta-item bg-linear-2 contact-meta-inline">
+        <div class="contact-meta-rounded bg-primary-1">
+          <img src="gym.svg" loading="eager" alt="" class="contact-meta-icon" />
+        </div>
+        <h2 class="heading-h6">
+          24 Stunden kein Sport, keine Sauna, kein Solarium
+        </h2>
+      </div>
+      <div class="contact-meta-item bg-linear-2 contact-meta-inline">
+        <div class="contact-meta-rounded bg-primary-1">
+          <img
+            src="paint.svg"
+            loading="eager"
+            alt=""
+            class="contact-meta-icon"
+          />
+        </div>
+        <h2 class="heading-h6">
+          Kein Make-up und keine Gesichtsbehandlungen am selben Tag
+        </h2>
+      </div>
+      <div class="contact-meta-item bg-linear-2 contact-meta-inline">
+        <div class="contact-meta-rounded bg-primary-1">
+          <img
+            src="beer.svg"
+            loading="eager"
+            alt=""
+            class="contact-meta-icon"
+          />
+        </div>
+        <h2 class="heading-h6">
+          Kein Alkohol und keine blutverdünnenden Medikamente (z. B. Aspirin,
+          Voltaren, Ibuprofen)
+        </h2>
+      </div>
+    </div>
+  </div>
+  <style>
+    .contact-meta-inline {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .contact-meta-inline .contact-meta-rounded {
+      margin-bottom: 0;
+      flex-shrink: 0;
+      flex-direction: row;
+    }
+    .contact-meta-inline .heading-h6 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .hero-subtitle {
+      font-family: var(--font-family--heading);
+      color: var(--color--primary-2);
+      font-size: 2rem;
+      font-weight: 500;
+      margin-top: -2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+    @media (max-width: 767px) {
+      .contact-meta-inline {
+        gap: 0.7rem;
+      }
+      .contact-meta-inline .heading-h6 {
+        font-size: 1rem;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+        margin-top: -1.2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</section>
