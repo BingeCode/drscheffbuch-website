@@ -9,14 +9,19 @@
 
   <div class="cards-container">
     <div class="ablauf-card">
-      <img src="choose-01.svg" loading="eager" alt="" class="why-choose-icon" />
+      <img
+        src="conversation.svg"
+        loading="eager"
+        alt=""
+        class="why-choose-icon"
+      />
       <div>
         <h3 class="why-choose-title">1. Persönliches Beratungsgespräch</h3>
       </div>
     </div>
 
     <div class="ablauf-card">
-      <img src="choose-02.svg" loading="eager" alt="" class="why-choose-icon" />
+      <img src="target.svg" loading="eager" alt="" class="why-choose-icon" />
       <div>
         <h3 class="why-choose-title">
           2. Gemeinsame Besprechung der Wunschzonen
@@ -25,7 +30,7 @@
     </div>
 
     <div class="ablauf-card">
-      <img src="choose-03.svg" loading="eager" alt="" class="why-choose-icon" />
+      <img src="camera.svg" loading="eager" alt="" class="why-choose-icon" />
       <div>
         <h3 class="why-choose-title">
           3. Foto-Dokumentation vor der Behandlung
@@ -34,14 +39,14 @@
     </div>
 
     <div class="ablauf-card">
-      <img src="choose-04.svg" loading="eager" alt="" class="why-choose-icon" />
+      <img src="pen.svg" loading="eager" alt="" class="why-choose-icon" />
       <div>
         <h3 class="why-choose-title">4. Desinfektion &amp; Einzeichnung</h3>
       </div>
     </div>
 
     <div class="ablauf-card">
-      <img src="choose-04.svg" loading="eager" alt="" class="why-choose-icon" />
+      <img src="syringe.svg" loading="eager" alt="" class="why-choose-icon" />
       <div>
         <h3 class="why-choose-title">
           5. Injektion mit besonders feinen 33G-Nadeln
@@ -50,7 +55,7 @@
     </div>
 
     <div class="ablauf-card">
-      <img src="choose-05.svg" loading="eager" alt="" class="why-choose-icon" />
+      <img src="face.svg" loading="eager" alt="" class="why-choose-icon" />
       <div>
         <h3 class="why-choose-title">6. Kurze Nachbeobachtung – und fertig!</h3>
       </div>
@@ -58,43 +63,18 @@
   </div>
 </section>
 
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  let sections = gsap.utils.toArray(".ablauf-card");
-  gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "power1.out",
-    scrollTrigger: {
-      start: "top top",
-      trigger: "#ablauf",
-      pin: "#pin",
-      pinSpacing: false,
-      scrub: 1,
-      // snap: 1 / (sections.length - 1),
-      end: () =>
-        "+=" +
-        document.querySelector<HTMLElement>(".cards-container")?.offsetWidth,
-      markers: true,
-    },
-  });
-</script>
-
 <style>
-  section {
-    overflow-x: hidden;
-  }
-
   .cards-container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 2rem;
     margin-top: 2rem;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    padding: 20px;
+    justify-content: start;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
   }
 
   .ablauf-card {
@@ -107,8 +87,8 @@
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    flex: 0 0 calc(33.333% - 1.33rem);
-    min-width: 300px;
+    flex: 0 0 300px;
+    max-width: 300px;
   }
 
   .ablauf-card:hover {
