@@ -1,45 +1,125 @@
 ---
-// About Me section component extracted from index.astro
+// Botox component - clean flex layout
 ---
 
-<section class="about-me-section" id="ueber-botulinumtoxin">
-  <div
-    data-w-id="050fd826-5231-8e3e-b9e5-56f626be9318"
-    class="about-me-wrapper">
-    <div class="w-layout-blockcontainer container w-container">
-      <div class="w-layout-grid grid-about-me">
-        <div
-          id="w-node-e4fd2e40-1e22-7da1-296b-49554e0bc430-36b1b590"
-          data-w-id="e4fd2e40-1e22-7da1-296b-49554e0bc430"
-          class="about-me-image-wrap">
-          <img
-            src="spritze.JPG"
-            loading="lazy"
-            width="Auto"
-            height="Auto"
-            alt=""
-            srcset="spritze.JPG 500w, spritze.JPG 800w, spritze.JPG 853w"
-            sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 853px"
-            class="about-me-image"
-          />
-        </div>
-        <div
-          data-w-id="d777db8a-aee1-8eab-9714-0d0d51c26ebb"
-          class="about-content-wrap">
-          <h2 class="text-white">Was ist Botulinumtoxin?</h2>
-          <p class="paragraph">
-            Botulinumtoxin Typ A (Bocouture®) ist ein seit Jahrzehnten
-            bewährter Wirkstoff zur gezielten Muskelentspannung – ideal, um
-            mimikbedingte Falten sanft und effektiv zu glätten.
-          </p>
-          <h2 class="text-white">Typische Behandlungszonen</h2>
-          <ul role="list">
-            <li class="list-item">Zornesfalte</li>
-            <li class="list-item-2">Stirnfalten</li>
-            <li class="list-item-3">Krähenfüße (Lachfältchen)</li>
-          </ul>
-        </div>
+<section class="botox-section" id="ueber-botulinumtoxin">
+  <div class="container">
+    <div class="botox-flex">
+      <div class="botox-image">
+        <img
+          src="spritze.JPG"
+          loading="lazy"
+          alt="Botox injection syringe"
+          class="botox-img"
+        />
+      </div>
+      <div class="botox-content">
+        <h2>Was ist Botulinumtoxin?</h2>
+        <p>
+          Botulinumtoxin Typ A (Bocouture®) ist ein seit Jahrzehnten bewährter
+          Wirkstoff zur gezielten Muskelentspannung – ideal, um mimikbedingte
+          Falten sanft und effektiv zu glätten.
+        </p>
+        <h2>Typische Behandlungszonen</h2>
+        <ul>
+          <li>Zornesfalte</li>
+          <li>Stirnfalten</li>
+          <li>Krähenfüße (Lachfältchen)</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .botox-section {
+    padding: 4rem 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .botox-flex {
+    display: flex;
+    align-items: stretch;
+    gap: 4rem;
+  }
+
+  .botox-image {
+    flex: 0 0 400px;
+  }
+
+  .botox-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  .botox-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .botox-content h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color--primary-1);
+  }
+
+  .botox-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--color--primary-1);
+  }
+
+  .botox-content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .botox-content li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    color: var(--color--primary-1);
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .botox-content li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color--primary-2);
+    font-weight: bold;
+  }
+
+  @media (max-width: 450px) {
+    .botox-flex {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .botox-image {
+      flex: none;
+      height: 300px;
+    }
+
+    .botox-content h2 {
+      font-size: 1.5rem;
+    }
+
+    .botox-content p,
+    .botox-content li {
+      font-size: 1rem;
+    }
+  }
+</style>

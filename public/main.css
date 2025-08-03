@@ -2971,19 +2971,6 @@ figcaption {
   height: 16px;
 }
 
-.about-me-section {
-  margin-top: 17px;
-  margin-bottom: 50px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.about-me-wrapper {
-  border-radius: var(--border-radius--lg);
-  background-color: var(--color--primary-1);
-  padding-top: 70px;
-}
-
 .grid-about-me {
   grid-column-gap: 90px;
   grid-row-gap: 90px;
@@ -2993,10 +2980,6 @@ figcaption {
 .about-me-image-wrap {
   margin-bottom: -40px;
   position: relative;
-}
-
-.about-content-wrap {
-  margin-bottom: 50px;
 }
 
 .about-list {
@@ -3359,10 +3342,6 @@ figcaption {
     grid-row-gap: 80px;
   }
 
-  .about-content-wrap {
-    margin-bottom: 100px;
-  }
-
   .about-rounded-decoration {
     width: 140px;
     height: 140px;
@@ -3506,10 +3485,6 @@ figcaption {
   .grid-about-me {
     grid-column-gap: 100px;
     grid-row-gap: 100px;
-  }
-
-  .about-content-wrap {
-    margin-bottom: 120px;
   }
 
   .about-rounded-decoration {
@@ -3681,10 +3656,6 @@ figcaption {
   .grid-about-me {
     grid-column-gap: 140px;
     grid-row-gap: 140px;
-  }
-
-  .about-content-wrap {
-    margin-bottom: 150px;
   }
 
   .about-rounded-decoration {
@@ -4839,10 +4810,6 @@ figcaption {
 
   .grid-about-me {
     grid-template-columns: 1fr;
-  }
-
-  .about-content-wrap {
-    margin-bottom: 30px;
   }
 
   .button-white {
