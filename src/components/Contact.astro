@@ -12,7 +12,10 @@
     </div>
     <div class="appointment-info-box">
       <img src="info.svg" alt="Info" class="appointment-info-icon" />
-      Termine ausschliesslich nach telefonischer Vereinbarung über Beauty Cosmetics.
+      <div>
+        Termine ausschliesslich nach telefonischer Vereinbarung über Beauty
+        Cosmetics.
+      </div>
     </div>
   </div>
   <div class="appointment-table-grid">
@@ -69,7 +72,7 @@
   }
   .appointment-info-box {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     width: fit-content;
     gap: 0.7rem;
@@ -81,7 +84,6 @@
     color: var(--color--primary-1);
     margin-bottom: 2.2rem;
     margin-top: 0;
-    flex-wrap: wrap;
   }
   .appointment-info-icon {
     color: var(--color--primary-2);
