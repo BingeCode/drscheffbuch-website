@@ -6,4 +6,7 @@ export default defineConfig({
   site: "https://bingecode.github.io",
   base: "/drscheffbuch-website",
   outDir: "./docs",
+  build: {
+    assets: "assets",
+  },
 });
