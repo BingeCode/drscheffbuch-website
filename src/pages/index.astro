@@ -62,24 +62,51 @@ import Footer from "../components/Footer.astro";
       <link href="/webflow.css" rel="stylesheet" type="text/css" />
       <link href="/main.css" rel="stylesheet" type="text/css" />
     </noscript>
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link
-      href="https://fonts.gstatic.com"
-      rel="preconnect"
-      crossorigin="anonymous"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/outfit-v15-latin-regular.woff2"
+      crossorigin
     />
     <link
       rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      as="font"
+      type="font/woff2"
+      href="/outfit-v15-latin-600.woff2"
+      crossorigin
     />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap"
-      />
-    </noscript>
+    <style>
+      @font-face {
+        font-family: "Outfit";
+        src:
+          url("/outfit-v15-latin-regular.woff2") format("woff2"),
+          url("/outfit-v15-latin-regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Outfit";
+        src:
+          url("/outfit-v15-latin-600.woff2") format("woff2"),
+          url("/outfit-v15-latin-600.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      /* Fallback stack to reduce layout shift until Outfit loads */
+      html {
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Outfit,
+          Arial,
+          sans-serif;
+      }
+    </style>
     <script type="text/javascript">
       !(function (o, c) {
         var n = c.documentElement,
