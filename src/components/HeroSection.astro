@@ -6,8 +6,10 @@
   <div class="hero-shadow-image-wrap">
     <img
       src="/png-01_1png-01.avif"
-      loading="lazy"
-      alt="Shadow Image"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      alt="Hintergrundgrafik"
       class="hero-shadow-image"
     />
   </div>
@@ -36,7 +38,13 @@
         <div
           data-w-id="9f2cad1f-3109-1be8-4d28-bfb1f7722088"
           class="hero-image-wrap">
-          <img src="/doctor_bw.JPG" loading="lazy" alt="" />
+          <img
+            src="/doctor_bw.JPG"
+            loading="lazy"
+            fetchpriority="low"
+            decoding="async"
+            alt="Portrait Dr. Nicolas Scheffbuch"
+          />
         </div>
         <div
           data-w-id="1b9e2bc5-2f44-5e83-ce50-0ec3d95cffd4"

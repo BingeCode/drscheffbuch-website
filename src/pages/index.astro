@@ -18,6 +18,8 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/icon.JPG" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href="https://drscheffbuch.ch/" />
+    <meta name="robots" content="index,follow" />
     <title>Dr. Scheffbuch Ästhetische Medizin - St. Gallen</title>
     <meta
       content="Dr. Scheffbuch Ästhetische Medizin in St. Gallen. Professionelle Botulinumtoxin-Behandlungen und ästhetische Medizin für natürliche Ergebnisse."
@@ -29,6 +31,8 @@ import Footer from "../components/Footer.astro";
       property="og:description"
     />
     <meta content="https://drscheffbuch.ch/icon.JPG" property="og:image" />
+    <meta content="https://drscheffbuch.ch/" property="og:url" />
+    <meta content="de_CH" property="og:locale" />
     <meta
       content="Dr. Scheffbuch Ästhetische Medizin"
       property="twitter:title"
@@ -38,6 +42,7 @@ import Footer from "../components/Footer.astro";
       property="twitter:description"
     />
     <meta content="https://drscheffbuch.ch/icon.JPG" property="twitter:image" />
+    <meta content="https://drscheffbuch.ch/" property="twitter:url" />
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <link href="/normalize.css" rel="stylesheet" type="text/css" />
@@ -67,6 +72,46 @@ import Footer from "../components/Footer.astro";
     </script>
     <link href="/icon.JPG" rel="shortcut icon" type="image/x-icon" />
     <link href="/webclip.png" rel="apple-touch-icon" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Physician",
+        "name": "Dr. Nicolas Scheffbuch",
+        "description": "Ästhetische Medizin in St. Gallen: Botulinumtoxin-Behandlungen – persönlich, präzise, natürlich.",
+        "image": "https://drscheffbuch.ch/icon.JPG",
+        "url": "https://drscheffbuch.ch/",
+        "telephone": "+41712222022",
+        "priceRange": "$$",
+        "currenciesAccepted": "CHF",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Neugasse 26",
+          "addressLocality": "St. Gallen",
+          "postalCode": "9000",
+          "addressCountry": "CH"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "St. Gallen"
+        },
+        "sameAs": ["https://instagram.com/drscheffbuchaesthetics"],
+        "hasMap": "https://maps.app.goo.gl/6CNNbLL4ht4iwiNc9",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Wednesday",
+            "opens": "17:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "15:00"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <Navbar />
