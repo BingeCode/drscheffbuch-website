@@ -41,7 +41,7 @@ const faqs = [
 
 <section class="faq-section" id="faq">
   <div class="faq-container">
-    <h2 class="faq-title">FAQ – Häufige Fragen</h2>
+    <h1 class="faq-title">FAQ – Häufige Fragen</h1>
     <div class="faq-list">
       {
         faqs.map((faq, idx) => (
@@ -132,13 +132,6 @@ const faqs = [
       margin: 0 auto;
       padding: 0 1rem;
     }
-    .faq-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      color: #091331;
-      text-align: left;
-    }
     .faq-list {
       display: flex;
       flex-direction: column;
@@ -195,9 +188,6 @@ const faqs = [
       overflow: hidden;
     }
     @media (max-width: 767px) {
-      .faq-title {
-        font-size: 1.3rem;
-      }
       .faq-container {
         padding: 0 0.5rem;
       }
