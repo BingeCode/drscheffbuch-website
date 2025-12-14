@@ -1,13 +1,9 @@
----
-// Appointment Meta section component extracted from index.astro
----
-
-<section class="section-spacing-rem">
-  <div class="w-layout-blockcontainer container w-container">
-    <h1 class="section-title">Nach der Behandlung</h1>
-    <div class="w-layout-grid grid-contact-meta">
-      <div class="contact-meta-item card contact-meta-inline">
-        <div class="contact-meta-rounded forbidden-icon">
+<section>
+  <div>
+    <h1>Nach der Behandlung</h1>
+    <div class="cards-container">
+      <div>
+        <div class="icon">
           <img
             src="/sleep.svg"
             loading="lazy"
@@ -16,10 +12,10 @@
           />
           <div class="forbidden-line"></div>
         </div>
-        <h2 class="heading-h6">4–6 Stunden nicht hinlegen</h2>
+        <p>4–6 Stunden nicht hinlegen</p>
       </div>
-      <div class="contact-meta-item card contact-meta-inline">
-        <div class="contact-meta-rounded forbidden-icon">
+      <div>
+        <div class="icon">
           <img
             src="/gym.svg"
             loading="lazy"
@@ -28,12 +24,10 @@
           />
           <div class="forbidden-line"></div>
         </div>
-        <h2 class="heading-h6">
-          24 Stunden kein Sport, keine Sauna, kein Solarium
-        </h2>
+        <p>24 Stunden kein Sport, keine Sauna, kein Solarium</p>
       </div>
-      <div class="contact-meta-item card contact-meta-inline">
-        <div class="contact-meta-rounded forbidden-icon">
+      <div>
+        <div class="icon">
           <img
             src="/paint.svg"
             loading="lazy"
@@ -42,12 +36,10 @@
           />
           <div class="forbidden-line"></div>
         </div>
-        <h2 class="heading-h6">
-          Kein Make-up und keine Gesichtsbehandlungen am selben Tag
-        </h2>
+        <p>Kein Make-up und keine Gesichtsbehandlungen am selben Tag</p>
       </div>
-      <div class="contact-meta-item card contact-meta-inline">
-        <div class="contact-meta-rounded forbidden-icon">
+      <div>
+        <div class="icon">
           <img
             src="/beer.svg"
             loading="lazy"
@@ -56,10 +48,10 @@
           />
           <div class="forbidden-line"></div>
         </div>
-        <h2 class="heading-h6">
+        <p>
           Kein Alkohol und keine blutverdünnenden Medikamente (z. B. Aspirin,
           Voltaren, Ibuprofen)
-        </h2>
+        </p>
       </div>
     </div>
   </div>
@@ -73,8 +65,40 @@
       );
     }
 
-    .forbidden-icon {
-      background: transparent !important;
+    .cards-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+      justify-content: start;
+    }
+
+    .cards-container > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 270px;
+      background-image: linear-gradient(
+        40deg,
+        var(--color--secondary-3) 11%,
+        #e5ecf91a 50%,
+        var(--color--secondary-3) 87%
+      );
+
+      @media (max-width: 768px) {
+        width: 200px;
+      }
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .icon {
       border: 2px solid black;
       position: relative;
       border-radius: 50%;
@@ -94,46 +118,6 @@
       top: 50%;
       left: 0;
       margin-top: -1px;
-    }
-
-    .contact-meta-inline {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      width: 100%;
-    }
-    .contact-meta-inline .contact-meta-rounded {
-      margin-bottom: 0;
-      flex-shrink: 0;
-      flex-direction: row;
-    }
-    .contact-meta-inline .heading-h6 {
-      margin: 0;
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-    .hero-subtitle {
-      font-family: var(--font-family--heading);
-      color: var(--color--primary-2);
-      font-size: 2rem;
-      font-weight: 500;
-      margin-top: -2.5rem;
-      margin-bottom: 3rem;
-      text-align: center;
-      letter-spacing: 0.03em;
-    }
-    @media (max-width: 767px) {
-      .contact-meta-inline {
-        gap: 0.7rem;
-      }
-      .contact-meta-inline .heading-h6 {
-        font-size: 1rem;
-      }
-      .hero-subtitle {
-        font-size: 1.2rem;
-        margin-top: -1.2rem;
-        margin-bottom: 2rem;
-      }
     }
   </style>
 </section>
