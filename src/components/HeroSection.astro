@@ -1,5 +1,5 @@
-<section class="hero-section" id="start">
-  <div data-w-id="53ad0e5e-a245-1c48-bc1a-29cdbece4091" class="hero-wrapper">
+<section id="start">
+  <div>
     <div class="w-layout-blockcontainer container w-container">
       <div class="hero-title-wrap hero-title">
         <h1 data-w-id="70578a58-bc50-ecc6-2def-5ecf216048ac" class="hero-title">
@@ -48,26 +48,21 @@
 </section>
 
 <style>
-  .hero-section {
+  section {
     background-image: linear-gradient(
       180deg,
       var(--color--secondary-3),
       var(--color--transparent)
     );
-    margin-top: -170px;
-    padding-top: 160px;
+    padding-top: 110px;
     padding-bottom: 90px;
     position: relative;
   }
   .hero-shadow-image-wrap {
-    z-index: 0;
     height: 1100px;
     position: absolute;
     inset: 0% 0% auto auto;
   }
-  /* .hero-shadow-image {
-    height: 100%;
-  } */
   .hero-wrapper {
     z-index: 99;
     position: relative;
@@ -146,12 +141,13 @@
     line-height: 1.5;
     color: var(--color--primary-1);
   }
-  @media screen and (min-width: 1280px) {
-    .hero-section {
-      margin-top: -140px;
-      padding-top: 140px;
-      padding-bottom: 100px;
+
+  @media screen and (max-width: 768px) {
+    section {
+      padding-top: 50px;
     }
+  }
+  @media screen and (min-width: 1280px) {
     .grid-hero {
       grid-column-gap: 50px;
       grid-row-gap: 50px;
@@ -167,11 +163,6 @@
     }
   }
   @media screen and (min-width: 1920px) {
-    .hero-section {
-      margin-top: -140px;
-      padding-top: 140px;
-      padding-bottom: 140px;
-    }
     .grid-hero {
       grid-column-gap: 50px;
       grid-row-gap: 50px;
@@ -184,9 +175,6 @@
     }
   }
   @media screen and (max-width: 991px) {
-    .hero-section {
-      padding-bottom: 70px;
-    }
     .grid-hero {
       grid-column-gap: 20px;
       grid-row-gap: 20px;
@@ -202,10 +190,6 @@
     }
   }
   @media screen and (max-width: 767px) {
-    .hero-section {
-      padding-top: 180px;
-      padding-bottom: 50px;
-    }
     .grid-hero {
       grid-template-columns: 1fr;
     }
@@ -227,10 +211,6 @@
     }
   }
   @media screen and (max-width: 479px) {
-    .hero-section {
-      padding-top: 180px;
-      padding-bottom: 50px;
-    }
     .grid-hero {
       grid-template-columns: 1fr;
     }

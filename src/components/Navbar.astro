@@ -1,54 +1,247 @@
----
-// Navbar component extracted from index.astro
----
-
-<div
-  data-animation="default"
-  data-collapse="medium"
-  data-duration="400"
-  data-easing="ease"
-  data-easing2="ease"
-  role="banner"
-  class="navbar w-nav">
-  <div class="container w-container">
-    <div class="w-layout-grid grid-nav">
-      <a href="/" aria-current="page" class="brand w-nav-brand w--current"
-        ><div
-          style="background: white; border-radius: 50%; padding: 8px; display: inline-block;">
-          <img src="/icon.webp" loading="lazy" alt="" class="logo" />
-        </div></a
-      >
-      <nav
-        role="navigation"
-        id="w-node-e6ff9f79-f479-fa42-6f69-a3df18a8ef41-18a8ef3c"
-        class="nav-menu w-nav-menu">
-        <a href="#start" class="nav-link w-nav-link">Start</a>
-        <a href="#ueber-botulinumtoxin" class="nav-link w-nav-link"
-          >Über Botulinumtoxin</a
-        >
-        <a href="#ablauf" class="nav-link w-nav-link">Ablauf</a>
-        <a href="#preise" class="nav-link w-nav-link">Preise</a>
-        <a href="#faq" class="nav-link w-nav-link">FAQ</a>
-        <a href="#kontakt" class="nav-link w-nav-link">Kontakt</a>
-      </nav>
-      <div
-        id="w-node-e6ff9f79-f479-fa42-6f69-a3df18a8ef64-18a8ef3c"
-        class="right-nav">
-        <a
-          href="tel:+41712222022"
-          class="button-icon-link mobile-hide w-inline-block"
-          ><img
-            src="/call-dark.svg"
-            loading="eager"
-            alt="Telefon"
-            class="button-icon"
-          />
-          <div>+41 71 222 20 22</div>
-        </a>
-        <div class="menu-button w-nav-button">
-          <div class="w-icon-nav-menu"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div role="banner">
+  <a href="/"
+    ><div>
+      <img
+        src="/icon.webp"
+        loading="lazy"
+        alt=""
+        class="logo"
+        style="height: 50px;"
+      />
+    </div></a
+  >
+  <nav role="navigation">
+    <a href="#start">Start</a>
+    <a href="#ueber-botulinumtoxin">Über Botulinumtoxin</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#preise">Preise</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <a href="tel:+41712222022"
+    ><img src="/call-dark.svg" loading="eager" alt="Telefon" />
+  </a>
 </div>
+
+<!-- Mobile hamburger menu -->
+<button class="burger-menu" aria-label="Menü öffnen" aria-expanded="false">
+  <svg
+    width="28"
+    height="28"
+    viewBox="0 0 28 28"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <rect
+      class="burger-line"
+      x="4"
+      y="7"
+      width="20"
+      height="2.5"
+      rx="1.25"
+      fill="currentColor"></rect>
+    <rect
+      class="burger-line"
+      x="4"
+      y="12.75"
+      width="20"
+      height="2.5"
+      rx="1.25"
+      fill="currentColor"></rect>
+    <rect
+      class="burger-line"
+      x="4"
+      y="18.5"
+      width="20"
+      height="2.5"
+      rx="1.25"
+      fill="currentColor"></rect>
+  </svg>
+</button>
+
+<!-- Mobile navigation overlay -->
+<div class="mobile-nav-overlay" aria-hidden="true">
+  <nav class="mobile-nav">
+    <a href="#start">Start</a>
+    <a href="#ueber-botulinumtoxin">Über Botulinumtoxin</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#preise">Preise</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="tel:+41712222022" class="mobile-phone">
+      <img src="/call-dark.svg" loading="eager" alt="" /> Anrufen
+    </a>
+  </nav>
+</div>
+
+<style>
+  div[role="banner"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+
+  img {
+    height: 30px;
+  }
+
+  /* Burger menu button - hidden by default */
+  .burger-menu {
+    display: none;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color--primary, #2563eb);
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: center;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .burger-menu:hover {
+    transform: scale(1.05);
+  }
+
+  .burger-menu:active {
+    transform: scale(0.95);
+  }
+
+  /* Mobile navigation overlay */
+  .mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  .mobile-nav-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    bottom: 5rem;
+    right: 1.5rem;
+    background-color: var(--color--white, white);
+    border-radius: 1rem;
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  .mobile-nav-overlay.open .mobile-nav {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .mobile-nav a {
+    padding: 0.875rem 1.5rem;
+    text-decoration: none;
+    color: var(--color--text-primary, #1f2937);
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+
+  .mobile-nav a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--color--primary, #2563eb);
+  }
+
+  .mobile-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 0.5rem;
+    padding-top: 1rem !important;
+  }
+
+  /* Show mobile menu on smaller screens */
+  @media (max-width: 768px) {
+    div[role="banner"] {
+      display: none;
+    }
+
+    .burger-menu {
+      display: flex;
+    }
+
+    .mobile-nav-overlay {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  const burgerMenu = document.querySelector(".burger-menu");
+  const mobileNavOverlay = document.querySelector(".mobile-nav-overlay");
+  const mobileNavLinks = document.querySelectorAll(".mobile-nav a");
+
+  function toggleMenu() {
+    const isOpen = mobileNavOverlay?.classList.toggle("open");
+    burgerMenu?.setAttribute("aria-expanded", String(isOpen));
+    mobileNavOverlay?.setAttribute("aria-hidden", String(!isOpen));
+  }
+
+  burgerMenu?.addEventListener("click", toggleMenu);
+
+  // Close menu when clicking overlay background
+  mobileNavOverlay?.addEventListener("click", (e) => {
+    if (e.target === mobileNavOverlay) {
+      toggleMenu();
+    }
+  });
+
+  // Close menu when clicking a link
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (mobileNavOverlay?.classList.contains("open")) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // Close menu on escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileNavOverlay?.classList.contains("open")) {
+      toggleMenu();
+    }
+  });
+</script>
