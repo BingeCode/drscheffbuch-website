@@ -1,9 +1,5 @@
----
-// Botox component - clean flex layout
----
-
-<section class="botox-section" id="ueber-botulinumtoxin">
-  <div class="container">
+<section id="ueber-botulinumtoxin">
+  <div>
     <div class="botox-flex">
       <div class="botox-image">
         <img
@@ -12,10 +8,9 @@
           fetchpriority="high"
           decoding="async"
           alt="Botox injection syringe"
-          class="botox-img"
         />
       </div>
-      <div class="botox-content">
+      <div>
         <h2>Was ist Botulinumtoxin?</h2>
         <p>
           Botulinumtoxin Typ A (Bocouture®) ist ein seit Jahrzehnten bewährter
@@ -40,98 +35,31 @@
 </section>
 
 <style>
-  .botox-section {
-    padding: 4rem 0;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
   .botox-flex {
     display: flex;
-    align-items: stretch;
     gap: 4rem;
 
     @media (max-width: 768px) {
       flex-direction: column;
+      align-items: center;
+      gap: 2rem;
     }
   }
 
   .botox-image {
-    flex: 0 0 400px;
+    max-width: 400px;
   }
 
-  .botox-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  img {
     border-radius: 1rem;
   }
 
-  .botox-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .botox-content h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--color--primary-1);
-  }
-
-  .botox-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: var(--color--primary-1);
-  }
-
-  .botox-content ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .botox-content li {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
-    color: var(--color--primary-1);
-    position: relative;
+  li {
     padding-left: 1.5rem;
-  }
+    margin-bottom: 10px;
 
-  .botox-content li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--color--primary-2);
-    font-weight: bold;
-  }
-
-  @media (max-width: 450px) {
-    .botox-flex {
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .botox-image {
-      flex: none;
-      height: 300px;
-    }
-
-    .botox-content h2 {
-      font-size: 1.5rem;
-    }
-
-    .botox-content p,
-    .botox-content li {
-      font-size: 1rem;
+    &::marker {
+      color: var(--color--primary-2);
     }
   }
 </style>

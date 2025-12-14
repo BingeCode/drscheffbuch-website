@@ -48,13 +48,7 @@ import Footer from "../components/Footer.astro";
     <meta content="https://drscheffbuch.ch/" property="twitter:url" />
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
-    <link href="/normalize.css" rel="stylesheet" type="text/css" />
-    <link
-      rel="preload"
-      href="/webflow.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
+
     <link
       rel="preload"
       href="/main.css"
@@ -62,7 +56,6 @@ import Footer from "../components/Footer.astro";
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
-      <link href="/webflow.css" rel="stylesheet" type="text/css" />
       <link href="/main.css" rel="stylesheet" type="text/css" />
     </noscript>
     <link
@@ -207,30 +200,25 @@ import Footer from "../components/Footer.astro";
       --border-radius--md: 15px;
     }
 
+    section:not(:first-of-type) {
+      margin-top: 200px;
+
+      @media screen and (max-width: 768px) {
+        margin-top: 100px;
+      }
+    }
+
+    section > div {
+      max-width: 1400px;
+      padding: 0 2rem;
+      margin: auto;
+    }
+
     body {
       font-size: 18px;
       line-height: 1.5em;
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: 70px;
-      font-weight: 500;
-      line-height: 1.2em;
-    }
-
-    h2 {
-      margin-top: 0;
-      font-size: 56px;
-      font-weight: 500;
-      line-height: 1.2em;
-    }
-
-    h3 {
-      margin-top: 0;
-      font-size: 42px;
-      font-weight: 500;
-      line-height: 1.2em;
+      color: black;
+      margin: 0;
     }
   </style>
 </html>
