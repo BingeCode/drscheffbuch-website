@@ -1,88 +1,36 @@
----
-// Ablauf section component - simplified version without slider
----
-
-<section class="w-layout-blockcontainer container w-container" id="ablauf">
-  <div class="section-title">
+<section id="ablauf">
+  <div>
     <h1>Ablauf der Behandlung</h1>
-  </div>
 
-  <div class="cards-container">
-    <div class="ablauf-card">
-      <img
-        src="/conversation.svg"
-        loading="lazy"
-        alt="Icon Gespräch"
-        class="why-choose-icon"
-      />
+    <div class="cards-container">
       <div>
-        <h3 class="why-choose-title">1. Persönliches Beratungsgespräch</h3>
+        <img src="/conversation.svg" loading="lazy" alt="Icon Gespräch" />
+        <p>1. Persönliches Beratungsgespräch</p>
       </div>
-    </div>
 
-    <div class="ablauf-card">
-      <img
-        src="/target.svg"
-        loading="lazy"
-        alt="Icon Zielzonen"
-        class="why-choose-icon"
-      />
       <div>
-        <h3 class="why-choose-title">
-          2. Gemeinsame Besprechung der Wunschzonen
-        </h3>
+        <img src="/target.svg" loading="lazy" alt="Icon Zielzonen" />
+        <p>2. Gemeinsame Besprechung der Wunschzonen</p>
       </div>
-    </div>
 
-    <div class="ablauf-card">
-      <img
-        src="/camera.svg"
-        loading="lazy"
-        alt="Icon Kamera"
-        class="why-choose-icon"
-      />
       <div>
-        <h3 class="why-choose-title">
-          3. Foto-Dokumentation vor der Behandlung
-        </h3>
+        <img src="/camera.svg" loading="lazy" alt="Icon Kamera" />
+        <p>3. Foto-Dokumentation vor der Behandlung</p>
       </div>
-    </div>
 
-    <div class="ablauf-card">
-      <img
-        src="/pen.svg"
-        loading="lazy"
-        alt="Icon Stift"
-        class="why-choose-icon"
-      />
       <div>
-        <h3 class="why-choose-title">4. Desinfektion &amp; Einzeichnung</h3>
+        <img src="/pen.svg" loading="lazy" alt="Icon Stift" />
+        <p>4. Desinfektion &amp; Einzeichnung</p>
       </div>
-    </div>
 
-    <div class="ablauf-card">
-      <img
-        src="/syringe.svg"
-        loading="lazy"
-        alt="Icon Spritze"
-        class="why-choose-icon"
-      />
       <div>
-        <h3 class="why-choose-title">
-          5. Injektion mit besonders feinen 33G-Nadeln
-        </h3>
+        <img src="/syringe.svg" loading="lazy" alt="Icon Spritze" />
+        <p>5. Injektion mit besonders feinen 33G-Nadeln</p>
       </div>
-    </div>
 
-    <div class="ablauf-card">
-      <img
-        src="/face.svg"
-        loading="lazy"
-        alt="Icon Gesicht"
-        class="why-choose-icon"
-      />
       <div>
-        <h3 class="why-choose-title">6. Kurze Nachbeobachtung – und fertig!</h3>
+        <img src="/face.svg" loading="lazy" alt="Icon Gesicht" />
+        <p>6. Kurze Nachbeobachtung – und fertig!</p>
       </div>
     </div>
   </div>
@@ -96,46 +44,34 @@
     gap: 2rem;
     margin-top: 2rem;
     justify-content: start;
-
-    @media (max-width: 768px) {
-      justify-content: center;
-    }
   }
 
-  .ablauf-card {
+  .cards-container > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     padding: 2rem;
-    background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    flex: 0 0 300px;
-    max-width: 300px;
+    width: 270px;
     background-image: linear-gradient(
       40deg,
       var(--color--secondary-3) 11%,
       #e5ecf91a 50%,
       var(--color--secondary-3) 87%
     );
+
+    @media (max-width: 768px) {
+      width: 200px;
+    }
   }
 
-  .ablauf-card:hover {
-    transform: translateY(-5px);
+  p {
+    text-align: center;
   }
 
-  .why-choose-icon {
+  img {
     width: 60px;
     height: 60px;
-    margin-bottom: 1rem;
-  }
-
-  .why-choose-title {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #333;
   }
 </style>
