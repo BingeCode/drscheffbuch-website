@@ -1,26 +1,28 @@
-<div role="banner">
-  <a href="/"
-    ><div>
-      <img
-        src="/icon.webp"
-        loading="lazy"
-        alt=""
-        class="logo"
-        style="height: 50px;"
-      />
-    </div></a
-  >
-  <nav role="navigation">
-    <a href="#start">Start</a>
-    <a href="#ueber-botulinumtoxin">Über Botulinumtoxin</a>
-    <a href="#ablauf">Ablauf</a>
-    <a href="#preise">Preise</a>
-    <a href="#faq">FAQ</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
-  <a href="tel:+41712222022"
-    ><img src="/call-dark.svg" loading="eager" alt="Telefon" />
-  </a>
+<div class="navbar">
+  <div role="banner">
+    <a href="/"
+      ><div class="logo-wrap">
+        <img
+          src="/icon.webp"
+          loading="lazy"
+          alt=""
+          class="logo"
+          style="height: 40px;"
+        />
+      </div></a
+    >
+    <nav role="navigation">
+      <a href="#start">Start</a>
+      <a href="#ueber-botulinumtoxin">Über Botulinumtoxin</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#preise">Preise</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="tel:+41712222022"
+      ><img src="/call-dark.svg" loading="eager" alt="Telefon" />
+    </a>
+  </div>
 </div>
 
 <!-- Mobile hamburger menu -->
@@ -74,15 +76,19 @@
 </div>
 
 <style>
+  .navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+  }
   div[role="banner"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 10;
+    max-width: 1400px;
+    margin: auto;
   }
 
   nav {
@@ -97,6 +103,12 @@
 
   img {
     height: 30px;
+  }
+
+  .logo-wrap {
+    padding: 8px;
+    background-color: white;
+    border-radius: 50%;
   }
 
   /* Burger menu button - hidden by default */

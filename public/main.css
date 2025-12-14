@@ -1,41 +1,3 @@
-@font-face {
-  font-family: Overusedgrotesk;
-  src: url("OverusedGrotesk-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Overusedgrotesk;
-  src: url("OverusedGrotesk-SemiBold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-:root {
-  --color--white: white;
-  --font-family--body: Outfit, sans-serif;
-  --color--body: var(--color--gray-1);
-  --font-family--heading: Outfit, Arial, sans-serif;
-  --color--heading: var(--color--primary-1);
-  --color--primary-1: #091331;
-  --border-radius--lg: 20px;
-  --color--secondary-3: #e5ecf9;
-  --color--gray-2: #e7e8eb;
-  --border-radius--form-input: 10px;
-  --color--primary-2: #2b6cf5;
-  --color--gray-1: #4c4e51;
-  --border-radius--button: 100px;
-  --color--black\<deleted\|variable-9b64f1b3-27eb-b831-0ca1-24b3f85be6f1\>: #1d1f17;
-  --color--transparent: #0000;
-  --border-radius--rounded: 500px;
-  --color--secondary-2: #dce2f3;
-  --color--secondary-1: #d4e1f9;
-  --border-radius--md: 15px;
-}
-
 .w-layout-blockcontainer {
   max-width: 940px;
   margin-left: auto;
@@ -62,45 +24,6 @@
   .w-layout-blockcontainer {
     max-width: none;
   }
-}
-
-body {
-  background-color: var(--color--white);
-  font-family: var(--font-family--body);
-  color: var(--color--body);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5em;
-}
-
-h1 {
-  font-family: var(--font-family--heading);
-  color: var(--color--heading);
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 70px;
-  font-weight: 500;
-  line-height: 1.2em;
-}
-
-h2 {
-  font-family: var(--font-family--heading);
-  color: var(--color--heading);
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 56px;
-  font-weight: 500;
-  line-height: 1.2em;
-}
-
-h3 {
-  font-family: var(--font-family--heading);
-  color: var(--color--heading);
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 42px;
-  font-weight: 500;
-  line-height: 1.2em;
 }
 
 p {
@@ -247,12 +170,6 @@ strong {
 .brand {
   margin-left: 0;
   padding-left: 0;
-}
-
-.navbar {
-  background-color: var(--color--transparent);
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 .section-spacing {
@@ -859,7 +776,6 @@ strong {
     font-size: 44px;
   }
 
-  
   .heading-h6 {
     font-size: 20px;
   }
@@ -884,11 +800,6 @@ strong {
   .right-nav {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-  }
-
-  .navbar {
-    padding-top: 20px;
-    padding-bottom: 20px;
   }
 
   .section-spacing {
@@ -938,19 +849,10 @@ strong {
     font-size: 20px;
   }
 
-  
   .grid-contact-meta {
     grid-column-gap: 30px;
     grid-row-gap: 30px;
     grid-template-columns: 1fr;
-  }
-
-  .hero-title-wrap {
-    margin-bottom: 10px;
-  }
-
-  .hero-title {
-    font-size: 50px;
   }
 
   .grid-hero {
@@ -1059,10 +961,6 @@ strong {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     flex-flow: column;
-  }
-
-  .hero-title {
-    font-size: 42px;
   }
 }
 

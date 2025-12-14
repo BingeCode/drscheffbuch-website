@@ -98,14 +98,16 @@ import Footer from "../components/Footer.astro";
         font-style: normal;
         font-display: swap;
       }
-      /* Fallback stack to reduce layout shift until Outfit loads */
-      html {
+
+      /* Default font for the whole document (everything inherits from this) */
+      html,
+      body {
         font-family:
+          Outfit,
           system-ui,
           -apple-system,
-          Segoe UI,
+          "Segoe UI",
           Roboto,
-          Outfit,
           Arial,
           sans-serif;
       }
@@ -181,4 +183,54 @@ import Footer from "../components/Footer.astro";
       crossorigin="anonymous"></script>
     <script src="/webflow.js" type="text/javascript"></script>
   </body>
+
+  <style is:global>
+    :root {
+      --color--white: white;
+      --font-family--body: Outfit, sans-serif;
+      --color--body: var(--color--gray-1);
+      --font-family--heading: Outfit, Arial, sans-serif;
+      --color--heading: var(--color--primary-1);
+      --color--primary-1: #091331;
+      --border-radius--lg: 20px;
+      --color--secondary-3: #e5ecf9;
+      --color--gray-2: #e7e8eb;
+      --border-radius--form-input: 10px;
+      --color--primary-2: #2b6cf5;
+      --color--gray-1: #4c4e51;
+      --border-radius--button: 100px;
+      --color--black: #1d1f17;
+      --color--transparent: #0000;
+      --border-radius--rounded: 500px;
+      --color--secondary-2: #dce2f3;
+      --color--secondary-1: #d4e1f9;
+      --border-radius--md: 15px;
+    }
+
+    body {
+      font-size: 18px;
+      line-height: 1.5em;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 70px;
+      font-weight: 500;
+      line-height: 1.2em;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 56px;
+      font-weight: 500;
+      line-height: 1.2em;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 42px;
+      font-weight: 500;
+      line-height: 1.2em;
+    }
+  </style>
 </html>
