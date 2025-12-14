@@ -1,5 +1,4 @@
 ---
-// Responsive FAQ Section with expandable items
 const faqs = [
   {
     question: "Tut das weh?",
@@ -39,7 +38,7 @@ const faqs = [
 ];
 ---
 
-<section class="faq-section" id="faq">
+<section id="faq">
   <div class="faq-container">
     <h1 class="faq-title">FAQ – Häufige Fragen</h1>
     <div class="faq-list">
@@ -119,18 +118,8 @@ const faqs = [
     });
   </script>
   <style>
-    .faq-section {
-      width: 100%;
-      background: #fff;
-      padding: 3rem 0;
-      display: flex;
-      justify-content: center;
-    }
     .faq-container {
-      width: 100%;
       max-width: 700px;
-      margin: 0 auto;
-      padding: 0 1rem;
     }
     .faq-list {
       display: flex;
@@ -160,7 +149,6 @@ const faqs = [
       outline: none;
       font-size: 1.1rem;
       font-weight: 600;
-      color: #091331;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -180,25 +168,8 @@ const faqs = [
     }
     .faq-answer {
       background: #fff;
-      color: #222;
-      font-size: 1rem;
-      line-height: 1.6;
-      padding: 0 1.2rem;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       overflow: hidden;
-    }
-    @media (max-width: 767px) {
-      .faq-container {
-        padding: 0 0.5rem;
-      }
-      .faq-question {
-        font-size: 1rem;
-        padding: 1rem 1rem 1rem 1rem;
-      }
-      .faq-answer {
-        font-size: 0.95rem;
-        padding: 0 1rem;
-      }
     }
   </style>
 </section>
