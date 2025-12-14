@@ -1,16 +1,8 @@
 <div class="navbar">
   <div role="banner">
-    <a href="/"
-      ><div class="logo-wrap">
-        <img
-          src="/icon.webp"
-          loading="lazy"
-          alt=""
-          class="logo"
-          style="height: 40px;"
-        />
-      </div></a
-    >
+    <a href="/" class="logo-wrap">
+      <img src="/icon.webp" loading="lazy" alt="" style="height: 40px;" />
+    </a>
     <nav role="navigation">
       <a href="#start">Start</a>
       <a href="#ueber-botulinumtoxin">Über Botulinumtoxin</a>
@@ -106,7 +98,11 @@
   }
 
   .logo-wrap {
-    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
     background-color: white;
     border-radius: 50%;
   }

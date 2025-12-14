@@ -1,5 +1,5 @@
 ---
-import SubPageNavbar from "../components/SubPageNavbar.astro";
+import BackButton from "../components/BackButton.astro";
 import Footer from "../components/Footer.astro";
 ---
 
@@ -16,7 +16,6 @@ import Footer from "../components/Footer.astro";
       content="Datenschutzerklärung von Dr. Scheffbuch Ästhetische Medizin in St. Gallen."
     />
     <link href="/normalize.css" rel="stylesheet" type="text/css" />
-    <link href="/webflow.css" rel="stylesheet" type="text/css" />
     <link href="/main.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link
@@ -44,11 +43,10 @@ import Footer from "../components/Footer.astro";
     <link href="/icon.webp" rel="apple-touch-icon" />
   </head>
   <body>
-    <SubPageNavbar />
-
     <div class="section-spacing">
       <div class="w-layout-blockcontainer container w-container">
         <div class="datenschutz-content">
+          <BackButton />
           <h1 class="heading-h1 text-center">Datenschutzerklärung</h1>
 
           <section>
@@ -467,7 +465,6 @@ import Footer from "../components/Footer.astro";
       type="text/javascript"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"></script>
-    <script src="/webflow.js" type="text/javascript"></script>
   </body>
 </html>
 
