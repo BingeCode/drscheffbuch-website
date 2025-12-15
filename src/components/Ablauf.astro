@@ -1,35 +1,44 @@
+---
+import Conversation from "../../public/conversation.svg";
+import Target from "../../public/target.svg";
+import Camera from "../../public/camera.svg";
+import Pen from "../../public/pen.svg";
+import Syringe from "../../public/syringe.svg";
+import Face from "../../public/face.svg";
+---
+
 <section id="ablauf">
   <div class="centered">
     <h1>Ablauf der Behandlung</h1>
 
     <div class="cards-container">
       <div>
-        <img src="/conversation.svg" loading="lazy" alt="Icon Gespräch" />
+        <Conversation />
         <p>1. Persönliches Beratungsgespräch</p>
       </div>
 
       <div>
-        <img src="/target.svg" loading="lazy" alt="Icon Zielzonen" />
+        <Target />
         <p>2. Gemeinsame Besprechung der Wunschzonen</p>
       </div>
 
       <div>
-        <img src="/camera.svg" loading="lazy" alt="Icon Kamera" />
+        <Camera />
         <p>3. Foto-Dokumentation vor der Behandlung</p>
       </div>
 
       <div>
-        <img src="/pen.svg" loading="lazy" alt="Icon Stift" />
+        <Pen />
         <p>4. Desinfektion &amp; Einzeichnung</p>
       </div>
 
       <div>
-        <img src="/syringe.svg" loading="lazy" alt="Icon Spritze" />
+        <Syringe />
         <p>5. Injektion mit besonders feinen 33G-Nadeln</p>
       </div>
 
       <div>
-        <img src="/face.svg" loading="lazy" alt="Icon Gesicht" />
+        <Face />
         <p>6. Kurze Nachbeobachtung – und fertig!</p>
       </div>
     </div>
@@ -70,7 +79,8 @@
     text-align: center;
   }
 
-  img {
+  img,
+  svg {
     width: 60px;
     height: 60px;
   }

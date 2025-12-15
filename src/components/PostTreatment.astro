@@ -1,51 +1,38 @@
+---
+import Sleep from "../../public/sleep.svg";
+import Gym from "../../public/gym.svg";
+import Paint from "../../public/paint.svg";
+import Beer from "../../public/beer.svg";
+---
+
 <section>
   <div class="centered">
     <h1>Nach der Behandlung</h1>
     <div class="cards-container">
       <div>
         <div class="icon">
-          <img
-            src="/sleep.svg"
-            loading="lazy"
-            alt="Nicht hinlegen"
-            class="contact-meta-icon"
-          />
+          <Sleep />
           <div class="forbidden-line"></div>
         </div>
         <p>4–6 Stunden nicht hinlegen</p>
       </div>
       <div>
         <div class="icon">
-          <img
-            src="/gym.svg"
-            loading="lazy"
-            alt="Kein Sport"
-            class="contact-meta-icon"
-          />
+          <Gym />
           <div class="forbidden-line"></div>
         </div>
         <p>24 Stunden kein Sport, keine Sauna, kein Solarium</p>
       </div>
       <div>
         <div class="icon">
-          <img
-            src="/paint.svg"
-            loading="lazy"
-            alt="Kein Make-up"
-            class="contact-meta-icon"
-          />
+          <Paint />
           <div class="forbidden-line"></div>
         </div>
         <p>Kein Make-up und keine Gesichtsbehandlungen am selben Tag</p>
       </div>
       <div>
         <div class="icon">
-          <img
-            src="/beer.svg"
-            loading="lazy"
-            alt="Kein Alkohol"
-            class="contact-meta-icon"
-          />
+          <Beer />
           <div class="forbidden-line"></div>
         </div>
         <p>
@@ -106,6 +93,11 @@
 
     p {
       text-align: center;
+    }
+
+    svg {
+      width: 40px;
+      height: 40px;
     }
 
     .icon {
