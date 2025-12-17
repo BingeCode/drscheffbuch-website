@@ -1,4 +1,4 @@
-<a class="back-button" href="/" aria-label="Zurück zur Startseite">
+<a href="/" aria-label="Zurück zur Startseite">
   <svg
     class="back-button__icon"
     xmlns="http://www.w3.org/2000/svg"
@@ -18,15 +18,21 @@
 </a>
 
 <style>
-  .back-button {
+  a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
     padding: 0.5rem 0.75rem;
+    margin-bottom: 30px;
   }
 
-  .back-button:hover {
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
     background: rgba(0, 0, 0, 0.06);
   }
 </style>

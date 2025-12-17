@@ -1,134 +1,95 @@
----
-// Footer component extracted from index.astro
----
-
-<footer data-w-id="9807520c-65b7-e828-71bd-909a6cfe1801" class="footer">
-  <div class="footer-wrapper">
-    <div class="w-layout-blockcontainer container w-container">
-      <div class="footer-contact-flex">
-        <div class="footer-meta-item">
-          <img
-            src="/business.svg"
-            loading="eager"
-            alt="Business Icon"
-            class="footer-meta-icon"
-          />
-          <div>
-            <div class="footer-meta-header">Adresse</div>
-            <div class="footer-meta-link-wrap">
-              <a
-                aria-label="link"
-                href="https://maps.google.com/?q=Beauty+Cosmetics+GmbH+Neugasse+26+9000+St.+Gallen"
-                target="_blank"
-                rel="noopener"
-                class="footer-meta-link">
-                Beauty Cosmetics GmbH<br />
-                Neugasse 26<br />
-                9000 St. Gallen
-              </a>
-            </div>
-          </div>
+<footer>
+  <div>
+    <div class="flex">
+      <div class="card">
+        <h4>Adresse St. Gallen</h4>
+        <div>
+          Beauty Cosmetics GmbH<br />
+          Neugasse 26<br />
+          9000 St. Gallen
         </div>
-        <div class="footer-meta-item">
-          <img
-            src="/phone-line.svg"
-            loading="eager"
-            alt="Phone Icon"
-            class="footer-meta-icon"
-          />
-          <div>
-            <div class="footer-meta-header">Telefon Studio</div>
-            <div class="footer-meta-link-wrap">
-              <a
-                aria-label="link"
-                href="tel:+41712222022"
-                class="footer-meta-link">+41 71 222 20 22</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="footer-meta-item">
-          <img
-            src="/envelope.svg"
-            loading="eager"
-            alt="Email Icon"
-            class="footer-meta-icon"
-          />
-          <div>
-            <div class="footer-meta-header">E-Mail</div>
-            <div class="footer-meta-link-wrap">
-              <a
-                aria-label="link"
-                href="mailto:praxis@drscheffbuch.ch"
-                class="footer-meta-link">praxis@drscheffbuch.ch</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="footer-meta-item">
-          <img
-            src="/Instagram.svg"
-            loading="eager"
-            alt="Instagram Icon"
-            class="footer-meta-icon"
-          />
-          <div>
-            <div class="footer-meta-header">Instagram</div>
-            <div class="footer-meta-link-wrap">
-              <a
-                aria-label="link"
-                href="https://instagram.com/drscheffbuchaesthetics"
-                target="_blank"
-                rel="noopener"
-                class="footer-meta-link">@drscheffbuchaesthetics</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pages">
-        <div class="footer-link-wrap">
-          <a href="/" aria-current="page" class="footer-link w--current"
-            >Startseite</a
-          >
-          <a href="/impressum" class="footer-link">Impressum</a>
-          <a href="/datenschutz" class="footer-link">Datenschutz</a>
-        </div>
-      </div>
-
-      <div class="footer-logo-wrap">
-        <a href="https://www.mybc.ch/" target="_blank" rel="noopener">
-          <img
-            src="/beauty_cosmetics.png"
-            loading="lazy"
-            alt="Beauty Cosmetics Logo"
-            class="footer-logo-img"
-          />
+        <a
+          href="https://maps.google.com/?q=Beauty+Cosmetics+GmbH+Neugasse+26+9000+St.+Gallen"
+          target="_blank"
+          rel="noopener">
         </a>
-        <img
-          src="/dermasr.png"
-          loading="lazy"
-          alt="Dermasr Logo"
-          class="footer-logo-img"
-        />
+        <a href="tel:+41712222022">Telefon: +41 71 222 20 22</a>
+        <a href="tel:+41712222022">WhatsApp: +41 71 222 20 22</a>
       </div>
+
+      <div class="card">
+        <h4>Kontakt Dr. Scheffbuch</h4>
+        Email
+        <a href="mailto:praxis@drscheffbuch.ch">praxis@drscheffbuch.ch</a>
+        Instagram<a
+          href="https://instagram.com/drscheffbuchaesthetics"
+          target="_blank"
+          rel="noopener">@drscheffbuchaesthetics</a
+        >
+      </div>
+      <div class="card">
+        <h4>Adresse Mels</h4>
+        <div>
+          House of Beauty<br />
+          Bahnhofstrasse 23 <br />
+          8887 Mels
+        </div>
+        <a href="tel:+41817233979">Telefon: +41 81 723 39 79</a>
+      </div>
+    </div>
+
+    <div class="pages">
+      <a href="/">Startseite</a>
+      <a href="/impressum" class="link">Impressum</a>
+      <a href="/datenschutz" class="link">Datenschutz</a>
+    </div>
+
+    <div class="logos">
+      <a href="https://www.mybc.ch/" target="_blank" rel="noopener">
+        <img
+          src="/beauty_cosmetics.png"
+          loading="lazy"
+          alt="Beauty Cosmetics Logo"
+        />
+      </a>
+      <img src="/dermasr.png" loading="lazy" alt="DermaSR Logo" />
     </div>
   </div>
 </footer>
 
 <style>
-  .footer-logo-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2.5rem 0 0.5rem;
+  footer {
+    background-image: linear-gradient(
+      40deg,
+      var(--color--secondary-3) 11%,
+      #e5ecf91a 50%,
+      var(--color--secondary-3) 87%
+    );
+    margin-top: 5rem;
+    padding: 60px 0;
   }
 
-  .footer-logo-img {
-    height: auto;
-    max-height: 100px;
-    max-width: 100px;
+  a {
+    display: block;
+    font-family: var(--font-family--body);
+    color: var(--color--body);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  .logos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2.5rem 0 0.5rem;
+
+    img {
+      max-width: 100px;
+    }
   }
 
   .pages {
@@ -138,45 +99,36 @@
     align-items: center;
   }
 
-  .footer-contact-flex {
+  .flex {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
-    margin: 3rem 0;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: space-around;
+    gap: 3.25rem;
+    margin-bottom: 50px;
   }
 
-  .footer-meta-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-  }
-
-  .footer-meta-header {
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-    color: var(--color--primary-2);
-  }
-
-  @media (max-width: 550px) {
-    .footer-contact-flex {
-      gap: 1.25rem;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .footer-meta-item {
+  @media (max-width: 1024px) {
+    .flex {
       flex-direction: column;
       align-items: center;
-      text-align: center;
     }
+  }
+  .card {
+    width: 250px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.25rem 1.25rem 1.1rem;
+    border-radius: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.06),
+      0 10px 24px rgba(15, 23, 42, 0.1);
+  }
+
+  h4 {
+    margin: 0 0 0.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   }
 </style>

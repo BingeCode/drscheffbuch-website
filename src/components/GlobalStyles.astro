@@ -1,0 +1,106 @@
+<style is:global>
+  @font-face {
+    font-family: "Outfit";
+    src:
+      url("/outfit-v15-latin-regular.woff2") format("woff2"),
+      url("/outfit-v15-latin-regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Outfit";
+    src:
+      url("/outfit-v15-latin-600.woff2") format("woff2"),
+      url("/outfit-v15-latin-600.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Default font for the whole document (everything inherits from this) */
+  html,
+  body {
+    font-family:
+      Outfit,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      Arial,
+      sans-serif;
+  }
+
+  :root {
+    --color--white: white;
+    --font-family--body: Outfit, sans-serif;
+    --color--body: var(--color--gray-1);
+    --font-family--heading: Outfit, Arial, sans-serif;
+    --color--heading: var(--color--primary-1);
+    --color--primary-1: #091331;
+    --border-radius--lg: 20px;
+    --color--secondary-3: #e5ecf9;
+    --color--gray-2: #e7e8eb;
+    --border-radius--form-input: 10px;
+    --color--primary-2: #2b6cf5;
+    --color--gray-1: #4c4e51;
+    --border-radius--button: 100px;
+    --color--black: #1d1f17;
+    --color--transparent: #0000;
+    --border-radius--rounded: 500px;
+    --color--secondary-2: #dce2f3;
+    --color--secondary-1: #d4e1f9;
+    --border-radius--md: 15px;
+  }
+
+  section:not(:first-of-type) {
+    margin-top: 200px;
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      margin-top: 150px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-top: 100px;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin: 0 0 3rem 0;
+    line-height: 3rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    margin: 0 0 1.5rem;
+    color: var(--color--primary-2);
+  }
+
+  section > div,
+  footer > div {
+    max-width: 1400px;
+    padding: 0 1.5rem;
+    margin: auto;
+  }
+
+  .centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  body {
+    font-size: 18px;
+    line-height: 1.5em;
+    color: black;
+    margin: 0;
+  }
+</style>
