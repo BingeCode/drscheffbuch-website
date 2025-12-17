@@ -1,13 +1,13 @@
 <section id="ueber-botulinumtoxin">
   <div>
-    <div class="botox-flex">
-      <div class="botox-image">
+    <div class="flex">
+      <div class="image-wrapper">
         <img
           src="/spritze.webp"
           loading="eager"
           fetchpriority="high"
           decoding="async"
-          alt="Botox injection syringe"
+          alt="Dr. Scheffbuch injiziert einer Patientin Botulinumtoxin ins Gesicht"
         />
       </div>
       <div>
@@ -35,24 +35,27 @@
 </section>
 
 <style>
-  .botox-flex {
+  .flex {
     display: flex;
     justify-content: center;
     gap: 4rem;
+  }
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
+    .flex {
       flex-direction: column;
       align-items: center;
       gap: 2rem;
     }
   }
 
-  .botox-image {
+  .image-wrapper {
     max-width: 400px;
   }
 
   img {
     border-radius: 1rem;
+    max-width: 100%;
   }
 
   li {

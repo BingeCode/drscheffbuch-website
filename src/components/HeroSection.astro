@@ -1,11 +1,11 @@
 <section id="start">
   <div>
-    <div class="hero-wrapper">
-      <h1 class="hero-title">Dr. Nicolas Scheffbuch</h1>
-      <h2 class="hero-subtitle">Ästhetische Medizin</h2>
+    <div class="wrapper">
+      <h1 class="title">Dr. Nicolas Scheffbuch</h1>
+      <h2 class="subtitle">Ästhetische Medizin</h2>
     </div>
-    <div class="main">
-      <div class="hero-rating-wrap">
+    <main>
+      <div class="left">
         <p>
           Botulinumtoxin-Behandlungen in St. Gallen – persönlich, präzise,
           natürlich
@@ -28,7 +28,7 @@
         <br />Alle Behandlungen werden von mir, Dr. Nicolas Scheffbuch,
         persönlich durchgeführt.
       </p>
-    </div>
+    </main>
   </div>
 </section>
 
@@ -50,28 +50,21 @@
     text-decoration: none;
     border-radius: var(--border-radius--rounded);
   }
-
-  .hero-shadow-image-wrap {
-    height: 1100px;
-    position: absolute;
-    inset: 0% 0% auto auto;
-  }
-  .hero-wrapper {
+  .wrapper {
     margin-bottom: 2rem;
   }
-  .hero-title {
+  .title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 600;
     text-align: center;
     line-height: 3rem;
   }
-  .hero-subtitle {
-    font-family: var(--font-family--heading);
+  .subtitle {
     font-size: clamp(1.5rem, 3.5vw, 2.5rem);
     text-align: center;
   }
 
-  .main {
+  main {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,7 +75,7 @@
     }
   }
 
-  .hero-rating-wrap {
+  .left {
     display: flex;
     max-width: 300px;
     flex-direction: column;
@@ -100,10 +93,8 @@
     margin: 0 20px;
   }
 
-  .hero-description {
-    font-size: clamp(1.125rem, 1.5vw, 1.5rem);
-    line-height: 1.5;
-    color: var(--color--primary-1);
+  img {
+    max-width: 100%;
   }
 
   @media screen and (max-width: 768px) {
@@ -111,7 +102,7 @@
       padding-top: 50px;
     }
 
-    .main {
+    main {
       flex-direction: column;
       gap: 30px;
     }
