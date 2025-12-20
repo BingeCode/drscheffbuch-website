@@ -17,11 +17,11 @@ import InfoIcon from "../../public/info.svg";
     </div>
     <div class="flex-container">
       <div class="table-wrapper">
-        <h4>
+        <h2>
           Mögliche Botulinumtoxin-Termine mit <span style="white-space: nowrap;"
             >Dr. Scheffbuch</span
           >
-        </h4>
+        </h2>
         <table>
           <tbody>
             <tr><td>Mittwoch</td><td>17:00 – 19:00</td></tr>
@@ -30,7 +30,7 @@ import InfoIcon from "../../public/info.svg";
         </table>
       </div>
       <div class="table-wrapper">
-        <h4>Beauty Cosmetics Anrufzeiten</h4>
+        <h2>Beauty Cosmetics Anrufzeiten</h2>
         <table>
           <tbody>
             <tr><td>Montag</td><td>08:30 – 19:00</td></tr>
@@ -45,6 +45,7 @@ import InfoIcon from "../../public/info.svg";
       </div>
     </div>
     <iframe
+      title="Google Maps snippet"
       src="https://www.google.com/maps?q=Beauty+Cosmetics+GmbH+St.+Gallen&t=m&z=16&output=embed"
       width="100%"
       height="600px"
@@ -118,9 +119,12 @@ import InfoIcon from "../../public/info.svg";
     );
   }
 
-  h4 {
+  h2 {
+    font-size: 1.3rem;
+    margin: 0 0 1.5rem;
+    color: var(--color--primary-2);
     text-align: center;
-    height: 3.5rem;
+    min-height: 3.5rem;
   }
 
   table {

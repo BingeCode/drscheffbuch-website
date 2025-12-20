@@ -1,18 +1,30 @@
+<!-- Preload critical fonts to break the CSS->font dependency chain -->
+<link
+  rel="preload"
+  href="/outfit-v15-latin-regular.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/outfit-v15-latin-600.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+
 <style is:global>
   @font-face {
     font-family: "Outfit";
-    src:
-      url("/outfit-v15-latin-regular.woff2") format("woff2"),
-      url("/outfit-v15-latin-regular.ttf") format("truetype");
+    src: url("/outfit-v15-latin-regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: "Outfit";
-    src:
-      url("/outfit-v15-latin-600.woff2") format("woff2"),
-      url("/outfit-v15-latin-600.ttf") format("truetype");
+    src: url("/outfit-v15-latin-600.woff2") format("woff2");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -76,12 +88,6 @@
     text-align: center;
     margin: 0 0 3rem 0;
     line-height: 3rem;
-  }
-
-  h4 {
-    font-size: 1.3rem;
-    margin: 0 0 1.5rem;
-    color: var(--color--primary-2);
   }
 
   section > div,
