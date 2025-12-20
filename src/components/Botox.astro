@@ -1,13 +1,18 @@
+---
+import { Image } from "astro:assets";
+import botoxImage from "../assets/spritze.webp";
+---
+
 <section id="ueber-botulinumtoxin">
   <div>
     <div class="flex">
       <div class="image-wrapper">
-        <img
-          src="src/assets/spritze.webp"
+        <Image
+          src={botoxImage}
+          alt="Dr. Scheffbuch injiziert einer Patientin Botulinumtoxin in die Stirn"
+          sizes="(max-width: 768px) 300px, 400px"
           loading="eager"
           fetchpriority="high"
-          decoding="async"
-          alt="Dr. Scheffbuch injiziert einer Patientin Botulinumtoxin ins Gesicht"
         />
       </div>
       <div>
@@ -55,7 +60,6 @@
 
   img {
     border-radius: 1rem;
-    max-width: 100%;
   }
 
   li {

@@ -1,3 +1,9 @@
+---
+import beautyCosmeticsImage from "../assets/beauty_cosmetics.png";
+import dermaSRImage from "../assets/dermasr.png";
+import { Image } from "astro:assets";
+---
+
 <footer>
   <div>
     <div class="flex">
@@ -46,13 +52,13 @@
 
     <div class="logos">
       <a href="https://www.mybc.ch/" target="_blank" rel="noopener">
-        <img
-          src="/beauty_cosmetics.png"
-          loading="lazy"
+        <Image
+          src={beautyCosmeticsImage}
           alt="Beauty Cosmetics Logo"
+          sizes="100px"
         />
       </a>
-      <img src="/dermasr.png" loading="lazy" alt="DermaSR Logo" />
+      <Image src={dermaSRImage} alt="DermaSR Logo" sizes="100px" />
     </div>
   </div>
 </footer>

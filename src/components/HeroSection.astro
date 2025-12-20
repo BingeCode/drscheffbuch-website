@@ -1,3 +1,8 @@
+---
+import { Picture, Image } from "astro:assets";
+import heroImage from "../assets/doctor_bw.webp";
+---
+
 <section id="start">
   <div>
     <div class="wrapper">
@@ -13,13 +18,12 @@
         <a href="tel:+41712222022" class="call-button">Jetzt anrufen</a>
       </div>
       <div class="hero-image-wrap">
-        <img
-          src="src/assets/doctor_bw.webp"
+        <Image
+          src={heroImage}
+          sizes="(max-width: 1200px) 300px, (max-width: 1400px) 400px, 500px"
+          alt="A picture of Dr. Scheffbuch"
           loading="eager"
-          decoding="async"
           fetchpriority="high"
-          decoding="async"
-          alt="Portrait Dr. Nicolas Scheffbuch"
         />
       </div>
       <p>
@@ -91,10 +95,6 @@
     height: 300px;
     overflow: hidden;
     margin: 0 20px;
-  }
-
-  img {
-    max-width: 100%;
   }
 
   @media screen and (max-width: 768px) {
