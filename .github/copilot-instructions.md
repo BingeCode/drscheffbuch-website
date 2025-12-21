@@ -23,6 +23,9 @@
   - For optimized local assets, import from `src/assets/` and render with `astro:assets` `<Image />` (see `HeroSection.astro`, `Footer.astro`).
   - For static files/icons/fonts, use `public/` and reference by absolute path (e.g. `/icon.webp`, `/info.svg`).
 - Client-side interactivity is minimal and done inline (see `Navbar.astro` script and `FAQ.astro` with `type="module" is:inline`). Keep JS small and avoid adding frameworks unless required.
+- The general layout of the main page (index.astro) is body > section > div
+  - The section element and its first div child element have a global style that makes sure all added content has a consistent layout. Use this pattern.
+- Make sure the layout functions well on mobile, tablet and desktop
 
 ## Generated vs source
 
