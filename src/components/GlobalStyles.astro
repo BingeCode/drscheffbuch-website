@@ -43,17 +43,28 @@
       sans-serif;
   }
 
+  body {
+    font-size: 18px;
+    line-height: 1.5em;
+    color: black;
+    margin: 0;
+  }
+
   :root {
     --color--primary: #2b6cf5;
     --color--grey: #e5ecf9;
   }
 
+  section {
+    background: #fff;
+  }
+
   section:not(:first-of-type) {
-    margin-top: 150px;
+    padding-top: 150px;
   }
   @media screen and (max-width: 1024px) {
     section:not(:first-of-type) {
-      margin-top: 100px;
+      padding-top: 100px;
     }
   }
 
@@ -81,13 +92,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  body {
-    font-size: 18px;
-    line-height: 1.5em;
-    color: black;
-    margin: 0;
   }
 </style>
 
