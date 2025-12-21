@@ -52,6 +52,7 @@ const baseId = "treatment-tabs";
       tabindex="0"
       aria-labelledby={`${baseId}-tab-botox`}>
       <slot name="botox" />
+      <div style="height: 100px;"></div>
     </div>
 
     <div
@@ -62,6 +63,7 @@ const baseId = "treatment-tabs";
       aria-labelledby={`${baseId}-tab-filler`}
       hidden>
       <slot name="filler" />
+      <div style="height: 100px;"></div>
     </div>
 
     <div
@@ -72,8 +74,8 @@ const baseId = "treatment-tabs";
       aria-labelledby={`${baseId}-tab-fettweg`}
       hidden>
       <slot name="fettweg" />
+      <div style="height: 100px;"></div>
     </div>
-    <div style="height: 50px;"></div>
   </div>
 </section>
 
