@@ -86,19 +86,119 @@ const baseId = "treatment-tabs";
     const tablist = root.querySelector('[role="tablist"]');
     const tabs = Array.from(root.querySelectorAll('[role="tab"]'));
 
-    const getPanel = (tab) => {
+    const getPanelId = (tab) => {
       const panelId = tab.getAttribute("aria-controls");
       return panelId ? document.getElementById(panelId) : null;
     };
 
-    const setActiveTab = (nextTab, { focus = true } = {}) => {
+    const findScrollContainer = (startEl) => {
+      /** @type {HTMLElement | null} */
+      let el = startEl?.parentElement ?? null;
+
+      while (el) {
+        const style = window.getComputedStyle(el);
+        const overflowY = style.overflowY;
+        const isScrollable =
+          (overflowY === "auto" || overflowY === "scroll") &&
+          el.scrollHeight > el.clientHeight;
+
+        if (isScrollable) return el;
+        el = el.parentElement;
+      }
+
+      return document.scrollingElement;
+    };
+
+    const scrollContainer = findScrollContainer(root);
+
+    const isWindowScroll =
+      !scrollContainer ||
+      scrollContainer === document.scrollingElement ||
+      scrollContainer === document.documentElement ||
+      scrollContainer === document.body;
+
+    const getScrollTop = () => {
+      if (isWindowScroll) {
+        return window.scrollY || document.documentElement.scrollTop || 0;
+      }
+      return scrollContainer.scrollTop;
+    };
+
+    const getMaxScrollTop = () => {
+      if (isWindowScroll) {
+        const doc = document.documentElement;
+        return Math.max(0, doc.scrollHeight - doc.clientHeight);
+      }
+      return Math.max(
+        0,
+        scrollContainer.scrollHeight - scrollContainer.clientHeight,
+      );
+    };
+
+    const scrollToY = (top, behavior = "smooth") => {
+      const clamped = Math.max(0, Math.min(top, getMaxScrollTop()));
+
+      if (isWindowScroll) {
+        window.scrollTo({ top: clamped, behavior });
+        return;
+      }
+
+      scrollContainer.scrollTo({ top: clamped, behavior });
+    };
+
+    const getRootTopInScrollContainer = () => {
+      const rootRect = root.getBoundingClientRect();
+
+      if (isWindowScroll) {
+        return (
+          rootRect.top +
+          (window.scrollY || document.documentElement.scrollTop || 0)
+        );
+      }
+
+      const containerRect = scrollContainer.getBoundingClientRect();
+      return rootRect.top - containerRect.top + scrollContainer.scrollTop;
+    };
+
+    const positionsByTab = new Map(); // tabValue -> scrollTop
+    const visitedTabs = new Set(); // tabValue
+    /** @type {HTMLElement | null} */
+    let activeTab = null;
+
+    const getTabKey = (tab) => tab.getAttribute("data-tab-value") || tab.id;
+
+    const setActiveTab = (nextTab, { focus = true, scroll = true } = {}) => {
+      if (!(nextTab instanceof HTMLElement)) return;
+
+      // store current tab position before switching
+      if (scroll && activeTab instanceof HTMLElement) {
+        const prevKey =
+          activeTab.getAttribute("data-tab-value") || activeTab.id;
+        positionsByTab.set(prevKey, getScrollTop());
+      }
+
       tabs.forEach((tab) => {
         const selected = tab === nextTab;
         tab.setAttribute("aria-selected", String(selected));
 
-        const panel = getPanel(tab);
+        const panel = getPanelId(tab);
         if (panel) panel.hidden = !selected;
       });
+
+      activeTab = nextTab;
+
+      if (scroll) {
+        const key = nextTab.getAttribute("data-tab-value") || nextTab.id;
+
+        // Only the first time a tab is clicked: scroll to the tabs (root)
+        if (!visitedTabs.has(key)) {
+          visitedTabs.add(key);
+          scrollToY(getRootTopInScrollContainer(), "smooth");
+        } else {
+          const y = positionsByTab.get(key);
+          if (typeof y === "number") scrollToY(y, "smooth");
+        }
+      }
 
       if (focus) nextTab.focus();
     };
@@ -156,10 +256,16 @@ const baseId = "treatment-tabs";
       tabs.find((t) => t.getAttribute("data-tab-value") === defaultTabValue) ||
       tabs[0];
 
-    if (initial) setActiveTab(initial, { focus: false });
+    if (initial) {
+      setActiveTab(initial, { focus: false, scroll: false });
+
+      visitedTabs.add(getTabKey(initial));
+
+      // Seed its initial position and keep it updated via the scroll listener above.
+      positionsByTab.set(getTabKey(initial), getScrollTop());
+    }
   }
 </script>
-
 <style>
   .tabs {
     max-width: 1400px;
