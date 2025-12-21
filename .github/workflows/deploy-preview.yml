@@ -1,0 +1,71 @@
+name: Deploy branch preview to GitHub Pages (subdir)
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch (source)
+        uses: actions/checkout@v4
+        with:
+          path: work
+
+      - name: Checkout main (pages target)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: pages
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: work/package-lock.json
+
+      - name: Install deps
+        working-directory: work
+        run: npm ci
+
+      - name: Compute preview slug
+        id: slug
+        shell: bash
+        run: |
+          raw='${{ github.ref_name }}'
+          slug="$(echo "$raw" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')"
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+
+      - name: Clean previous preview output
+        run: rm -rf pages/docs/preview/${{ steps.slug.outputs.slug }}
+
+      - name: Build preview into Pages subdir
+        working-directory: work
+        env:
+          PUBLIC_PREVIEW: "true"
+          ASTRO_BASE: /preview/${{ steps.slug.outputs.slug }}/
+          ASTRO_SITE: https://drscheffbuch.ch
+        run: npm run build -- --outDir ../pages/docs/preview/${{ steps.slug.outputs.slug }}
+
+      - name: Commit & push preview to main
+        working-directory: pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/preview/${{ steps.slug.outputs.slug }}
+          git commit -m "chore(preview): deploy ${{ github.ref_name }} -> /preview/${{ steps.slug.outputs.slug }}/" || exit 0
+          git push
+
+      - name: Summary
+        run: |
+          echo "Preview URL: https://drscheffbuch.ch/preview/${{ steps.slug.outputs.slug }}/" >> $GITHUB_STEP_SUMMARY

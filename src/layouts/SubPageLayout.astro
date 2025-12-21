@@ -2,6 +2,8 @@
 import BackButton from "../components/BackButton.astro";
 import Footer from "../components/Footer.astro";
 import GlobalStyles from "../components/GlobalStyles.astro";
+
+const isPreview = import.meta.env.PUBLIC_PREVIEW === "true";
 ---
 
 <!doctype html>
@@ -13,6 +15,10 @@ import GlobalStyles from "../components/GlobalStyles.astro";
     <link href="/icon.webp" rel="apple-touch-icon" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="robots"
+      content={isPreview ? "noindex,nofollow" : "index,follow"}
+    />
     <title>{Astro.props.title}</title>
     <meta name="description" content={Astro.props.description} />
     <GlobalStyles />

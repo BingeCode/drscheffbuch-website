@@ -3,6 +3,7 @@
 
 User-agent: *
 Allow: /
+Disallow: /preview/
 
 # Preferred host and sitemap (ensure sitemap.xml exists)
 Host: drscheffbuch.ch

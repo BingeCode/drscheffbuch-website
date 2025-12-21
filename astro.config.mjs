@@ -3,7 +3,8 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://bingecode.github.io",
+  site: process.env.ASTRO_SITE ?? "https://drscheffbuch.ch",
+  base: process.env.ASTRO_BASE ?? "/",
   outDir: "./docs",
   build: {
     assets: "assets",
