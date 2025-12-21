@@ -1,0 +1,243 @@
+---
+const defaultTab = "botox";
+const baseId = "treatment-tabs";
+---
+
+<section id="Behandlungen" data-treatment-tabs data-default-tab={defaultTab}>
+  <div>
+    <h2 style="text-align: center;">Ich interessiere mich für...</h2>
+    <!-- sr-only for screenreader context -->
+    <h2 class="sr-only" id={`${baseId}-label`}>Behandlungen</h2>
+    <div class="tablist-sticky">
+      <div class="tablist" role="tablist" aria-labelledby={`${baseId}-label`}>
+        <button
+          type="button"
+          class="tab"
+          id={`${baseId}-tab-botox`}
+          role="tab"
+          aria-selected="true"
+          aria-controls={`${baseId}-panel-botox`}
+          tabindex="0"
+          data-tab-value="botox">
+          Botulinumtoxin
+        </button>
+        <button
+          type="button"
+          class="tab"
+          id={`${baseId}-tab-filler`}
+          role="tab"
+          aria-selected="false"
+          aria-controls={`${baseId}-panel-filler`}
+          tabindex="0"
+          data-tab-value="filler">
+          Filler
+        </button>
+        <!-- <button
+            type="button"
+            class="tab"
+            id={`${baseId}-tab-fettweg`}
+            role="tab"
+            aria-selected="false"
+            aria-controls={`${baseId}-panel-fettweg`}
+            tabindex="0"
+            data-tab-value="fettweg">
+            Fett-weg Spritze
+          </button> -->
+      </div>
+    </div>
+    <div
+      class="panel"
+      id={`${baseId}-panel-botox`}
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby={`${baseId}-tab-botox`}>
+      <slot name="botox" />
+    </div>
+
+    <div
+      class="panel"
+      id={`${baseId}-panel-filler`}
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby={`${baseId}-tab-filler`}
+      hidden>
+      <slot name="filler" />
+    </div>
+
+    <div
+      class="panel"
+      id={`${baseId}-panel-fettweg`}
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby={`${baseId}-tab-fettweg`}
+      hidden>
+      <slot name="fettweg" />
+    </div>
+    <div style="height: 50px;"></div>
+  </div>
+</section>
+
+<script type="module" is:inline>
+  const root = document.querySelector("[data-treatment-tabs]");
+
+  if (root) {
+    root.dataset.enhanced = "true";
+
+    const tablist = root.querySelector('[role="tablist"]');
+    const tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+
+    const getPanel = (tab) => {
+      const panelId = tab.getAttribute("aria-controls");
+      return panelId ? document.getElementById(panelId) : null;
+    };
+
+    const setActiveTab = (nextTab, { focus = true } = {}) => {
+      tabs.forEach((tab) => {
+        const selected = tab === nextTab;
+        tab.setAttribute("aria-selected", String(selected));
+
+        const panel = getPanel(tab);
+        if (panel) panel.hidden = !selected;
+      });
+
+      if (focus) nextTab.focus();
+    };
+
+    const focusTabByOffset = (currentTab, offset) => {
+      const idx = tabs.indexOf(currentTab);
+      if (idx === -1) return;
+      const nextIdx = (idx + offset + tabs.length) % tabs.length;
+      tabs[nextIdx].focus();
+    };
+
+    tablist?.addEventListener("click", (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLElement)) return;
+      const tab = target.closest('[role="tab"]');
+      if (!(tab instanceof HTMLElement)) return;
+
+      setActiveTab(tab);
+    });
+
+    tablist?.addEventListener("keydown", (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLElement)) return;
+      if (target.getAttribute("role") !== "tab") return;
+
+      switch (e.key) {
+        case "ArrowRight":
+        case "Right":
+          e.preventDefault();
+          focusTabByOffset(target, +1);
+          break;
+        case "ArrowLeft":
+        case "Left":
+          e.preventDefault();
+          focusTabByOffset(target, -1);
+          break;
+        case "Home":
+          e.preventDefault();
+          tabs[0]?.focus();
+          break;
+        case "End":
+          e.preventDefault();
+          tabs[tabs.length - 1]?.focus();
+          break;
+        case "Enter":
+        case " ":
+          e.preventDefault();
+          setActiveTab(target);
+          break;
+      }
+    });
+
+    const defaultTabValue = root.getAttribute("data-default-tab") || "botox";
+    const initial =
+      tabs.find((t) => t.getAttribute("data-tab-value") === defaultTabValue) ||
+      tabs[0];
+
+    if (initial) setActiveTab(initial, { focus: false });
+  }
+</script>
+
+<style>
+  .tabs {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .tabs-inner {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  .tablist-sticky {
+    position: sticky;
+    top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .tablist {
+    margin: 0 auto;
+    max-width: 350px;
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    background: #fff;
+    border: 1px solid #e5ecf9;
+    border-radius: 999px;
+    padding: 0.35rem;
+    box-shadow: 0 2px 8px 0 rgba(9, 19, 49, 0.06);
+  }
+
+  .tab {
+    min-width: fit-content;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 1;
+    flex: 1;
+  }
+
+  .tab[aria-selected="true"] {
+    background: var(--color--primary);
+    color: #fff;
+  }
+
+  .tab:focus-visible {
+    outline: 3px solid var(--color--primary);
+    outline-offset: 2px;
+  }
+
+  .panels {
+    margin-top: 1rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 768px) {
+    .tabs {
+      padding: 0 1rem;
+    }
+
+    .tab {
+      padding: 0.6rem 0.9rem;
+    }
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import HeroSection from "../components/HeroSection.astro";
+import TreatmentTabs from "../components/TreatmentTabs.astro";
 import Botox from "../components/Botox.astro";
 import Ablauf from "../components/Ablauf.astro";
 import PostTreatment from "../components/PostTreatment.astro";
@@ -91,15 +92,35 @@ import GlobalStyles from "../components/GlobalStyles.astro";
       }
     </script>
     <GlobalStyles />
+    <style>
+      @media screen and (max-width: 768px) {
+        body {
+          background-color: var(--color--grey);
+        }
+      }
+    </style>
   </head>
   <body>
     <Navbar />
     <HeroSection />
-    <Botox />
-    <Ablauf />
-    <PostTreatment />
+    <TreatmentTabs>
+      <div slot="botox">
+        <Botox />
+        <Ablauf />
+        <PostTreatment />
+        <FAQ />
+      </div>
+
+      <div slot="filler">
+        <Ablauf />
+        <FAQ />
+      </div>
+
+      <div slot="fettweg">
+        <Botox />
+      </div>
+    </TreatmentTabs>
     <Prices />
-    <FAQ />
     <Contact />
     <Footer />
   </body>
