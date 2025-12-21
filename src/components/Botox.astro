@@ -1,78 +1,28 @@
 ---
 import { Image } from "astro:assets";
 import botoxImage from "../assets/spritze.webp";
+import PictureText from "./PictureText.astro";
 ---
 
-<section>
-  <div>
-    <div class="flex">
-      <div class="image-wrapper">
-        <Image
-          src={botoxImage}
-          alt="Dr. Scheffbuch injiziert einer Patientin Botulinumtoxin in die Stirn"
-          sizes="(max-width: 768px) 300px, 400px"
-          loading="eager"
-          fetchpriority="high"
-        />
-      </div>
-      <div id="ueber-botulinumtoxin">
-        <h2>Was ist Botulinumtoxin?</h2>
-        <p>
-          Botulinumtoxin Typ A (Bocouture®) ist ein seit Jahrzehnten bewährter
-          Wirkstoff zur gezielten Muskelentspannung – ideal, um mimikbedingte
-          Falten sanft und effektiv zu glätten.
-        </p>
-        <h2>Typische Behandlungszonen</h2>
-        <ul>
-          <li>Zornesfalte</li>
-          <li>Stirnfalten</li>
-          <li>Krähenfüsse (Lachfältchen)</li>
-          <li>Brow Lift (sanftes Anheben der äusseren Augenbrauen)</li>
-          <li>Lip Flip (sanftes Anheben der Oberlippe)</li>
-          <li>Bruxismus/Masseter (übermässiges Zähneknirschen nachts)</li>
-          <li>
-            Axilläre Hyperhidrose (übermässiges Schwitzen unter den Achseln)
-          </li>
-        </ul>
-      </div>
-    </div>
+<PictureText
+  image={botoxImage}
+  alt="Dr. Scheffbuch injiziert einer Patientin Botulinumtoxin in die Stirn">
+  <div slot="content">
+    <h2>Was ist Botulinumtoxin?</h2>
+    <p>
+      Botulinumtoxin Typ A (Bocouture®) ist ein seit Jahrzehnten bewährter
+      Wirkstoff zur gezielten Muskelentspannung – ideal, um mimikbedingte Falten
+      sanft und effektiv zu glätten.
+    </p>
+    <h2>Typische Behandlungszonen</h2>
+    <ul>
+      <li>Zornesfalte</li>
+      <li>Stirnfalten</li>
+      <li>Krähenfüsse (Lachfältchen)</li>
+      <li>Brow Lift (sanftes Anheben der äusseren Augenbrauen)</li>
+      <li>Lip Flip (sanftes Anheben der Oberlippe)</li>
+      <li>Bruxismus/Masseter (übermässiges Zähneknirschen nachts)</li>
+      <li>Axilläre Hyperhidrose (übermässiges Schwitzen unter den Achseln)</li>
+    </ul>
   </div>
-</section>
-
-<style>
-  .flex {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-  }
-
-  @media (max-width: 768px) {
-    .flex {
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-  }
-
-  .image-wrapper {
-    max-width: 400px;
-  }
-
-  img {
-    border-radius: 1rem;
-    height: 100%;
-  }
-
-  li {
-    padding-left: 1.5rem;
-    margin-bottom: 10px;
-
-    &::marker {
-      color: var(--color--primary);
-    }
-  }
-
-  p {
-    max-width: 600px;
-  }
-</style>
+</PictureText>

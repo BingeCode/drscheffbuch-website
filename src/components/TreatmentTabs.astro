@@ -49,33 +49,33 @@ const baseId = "treatment-tabs";
       class="panel"
       id={`${baseId}-panel-botox`}
       role="tabpanel"
-      tabindex="0"
+      tabindex="-1"
       aria-labelledby={`${baseId}-tab-botox`}>
       <slot name="botox" />
-      <div style="height: 100px;"></div>
+      <!-- <div style="height: 100px;"></div> -->
     </div>
 
     <div
       class="panel"
       id={`${baseId}-panel-filler`}
       role="tabpanel"
-      tabindex="0"
+      tabindex="-1"
       aria-labelledby={`${baseId}-tab-filler`}
       hidden>
       <slot name="filler" />
-      <div style="height: 100px;"></div>
+      <!-- <div style="height: 100px;"></div> -->
     </div>
 
-    <div
+    <!-- <div
       class="panel"
       id={`${baseId}-panel-fettweg`}
       role="tabpanel"
-      tabindex="0"
+      tabindex="-1"
       aria-labelledby={`${baseId}-tab-fettweg`}
       hidden>
       <slot name="fettweg" />
       <div style="height: 100px;"></div>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -169,7 +169,7 @@ const baseId = "treatment-tabs";
 
     const getTabKey = (tab) => tab.getAttribute("data-tab-value") || tab.id;
 
-    const setActiveTab = (nextTab, { focus = true, scroll = true } = {}) => {
+    const setActiveTab = (nextTab, { focus = true, scroll = false } = {}) => {
       if (!(nextTab instanceof HTMLElement)) return;
 
       // store current tab position before switching
@@ -284,7 +284,8 @@ const baseId = "treatment-tabs";
   .tablist-sticky {
     position: sticky;
     top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 10rem;
+    z-index: 10;
   }
 
   .tablist {

@@ -2,7 +2,6 @@
 import Navbar from "../components/Navbar.astro";
 import HeroSection from "../components/HeroSection.astro";
 import TreatmentTabs from "../components/TreatmentTabs.astro";
-import Botox from "../components/Botox.astro";
 import Ablauf from "../components/Ablauf.astro";
 import PostTreatment from "../components/PostTreatment.astro";
 import Prices from "../components/Prices.astro";
@@ -10,6 +9,10 @@ import FAQ from "../components/FAQ.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 import GlobalStyles from "../components/GlobalStyles.astro";
+import FillerOverview from "../components/FillerOverview.astro";
+import FillerPrices from "../components/FillerPrices.astro";
+import BotoxPrices from "../components/BotoxPrices.astro";
+import Botox from "../components/Botox.astro";
 ---
 
 <!doctype html>
@@ -108,10 +111,15 @@ import GlobalStyles from "../components/GlobalStyles.astro";
         <Botox />
         <Ablauf />
         <PostTreatment />
-        <Prices />
+        <BotoxPrices />
       </div>
 
-      <div slot="filler"></div>
+      <div slot="filler">
+        <FillerOverview />
+        <Ablauf />
+        <PostTreatment />
+        <FillerPrices />
+      </div>
 
       <div slot="fettweg"></div>
     </TreatmentTabs>

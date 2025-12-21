@@ -1,0 +1,123 @@
+---
+import assessmentImage from "../assets/assessment.webp";
+import { Image } from "astro:assets";
+---
+
+<section id="preise-filler" class="centered">
+  <h1>Preise – Filler-Behandlungen mit Belotero®</h1>
+
+  <div class="flex-container">
+    <table>
+      <tbody>
+        <tr>
+          <th class="underline" colspan="2" scope="colgroup">
+            Hautbild auffrischen
+          </th>
+        </tr>
+
+        <tr class="spacer">
+          <td colspan="2"></td>
+        </tr>
+
+        <tr>
+          <td>Eine Anwendung</td>
+          <td class="price"> CHF 450.– </td>
+
+          <tr>
+            <td>3er-Kur</td>
+            <td class="price">
+              <span class="original-price">CHF 1&apos;350.–</span>
+              <span>CHF 1&apos;100.–</span>
+            </td>
+          </tr>
+
+          <tr class="spacer">
+            <td colspan="2"></td>
+          </tr>
+
+          <tr>
+            <th class="underline" colspan="2" scope="colgroup">
+              Faltenbehandlungen
+            </th>
+          </tr>
+
+          <tr class="spacer">
+            <td colspan="2"></td>
+          </tr>
+
+          <tr>
+            <td>Marionettenfalten</td>
+            <td class="price"> CHF 490.–</td>
+          </tr>
+
+          <tr>
+            <td>Nasolabialfalten</td>
+            <td class="price"> CHF 490.–</td>
+          </tr>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="max-width: 400px;">
+      <Image
+        src={assessmentImage}
+        alt="Dr. Scheffbuch assessing a patient's face"
+        sizes="(max-width: 768px) 300px, 400px"
+      />
+    </div>
+  </div>
+
+  <style>
+    .flex-container {
+      display: flex;
+      gap: 4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    table {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(142, 169, 228, 0.14);
+      padding: 1.25rem;
+      background-image: linear-gradient(
+        40deg,
+        var(--color--grey) 11%,
+        #e5ecf91a 50%,
+        var(--color--grey) 87%
+      );
+    }
+
+    td {
+      vertical-align: bottom;
+    }
+
+    img {
+      border-radius: 1rem;
+      height: 100%;
+    }
+
+    .price {
+      font-weight: 700;
+      width: fit-content;
+      text-align: right;
+    }
+
+    .original-price {
+      display: block;
+      color: #ff4444 !important;
+      text-decoration: line-through;
+      font-style: italic;
+      margin-top: 0.25rem;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    .spacer td {
+      padding: 1rem 0 0.25rem 0;
+    }
+  </style>
+</section>
