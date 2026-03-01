@@ -23,16 +23,18 @@ import { Image } from "astro:assets";
           </tr>
           <tr>
             <td>2 Zonen:</td>
-            <td class="price">
-              <span class="original-price">CHF 500.–</span>
-              <span>CHF 420.–</span>
-            </td>
+            <td class="price">CHF 420.–</td>
           </tr>
           <tr>
             <td>3 Zonen:</td>
-            <td class="price">
-              <span class="original-price">CHF 750.– </span>
-              <span>CHF 540.–</span>
+            <td class="price">CHF 540.–</td>
+          </tr>
+          <tr class="spacer">
+            <td colspan="2"></td>
+          </tr>
+          <tr>
+            <td colspan="2" class="hint">
+              Kombinationsbehandlungen sind preislich vergünstigt.
             </td>
           </tr>
           <tr class="spacer">
@@ -45,6 +47,11 @@ import { Image } from "astro:assets";
           <tr>
             <td>Lip Flip <br /> (Zusatzleistung):</td>
             <td class="price">+ CHF 100.–</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="hint">
+              Nur in Kombination mit einer Botulinumtoxin-Behandlung.
+            </td>
           </tr>
           <tr class="spacer">
             <td colspan="2"></td>
@@ -112,12 +119,11 @@ import { Image } from "astro:assets";
       text-align: right;
     }
 
-    .original-price {
-      display: block;
-      color: #ff4444 !important;
-      text-decoration: line-through;
+    .hint {
+      font-size: 0.9rem;
       font-style: italic;
-      margin-top: 0.25rem;
+      color: #555;
+      padding-top: 0.5rem;
     }
 
     .underline {

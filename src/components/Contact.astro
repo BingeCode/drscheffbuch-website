@@ -3,147 +3,372 @@ import InfoIcon from "../../public/info.svg";
 ---
 
 <section id="kontakt">
-  <div class="centered">
-    <div class="flex-center">
-      <h1>Kontakt & Öffnungszeiten</h1>
-      <a href="tel:+41712222022" class="call-button">Jetzt anrufen</a>
-    </div>
-    <div class="info-box">
-      <InfoIcon class="info-icon" />
-      <div>
-        Termine ausschliesslich nach telefonischer Vereinbarung über Beauty
-        Cosmetics.
+  <div class="wrapper">
+    <h1>Kontakt & Termine</h1>
+
+    <div class="info-alert">
+      <div class="info-content">
+        <InfoIcon class="info-icon" />
+        <p>
+          Termine nach Vereinbarung – bitte kontaktieren Sie den gewünschten
+          Standort direkt.
+        </p>
       </div>
     </div>
-    <div class="flex-container">
-      <div class="table-wrapper">
-        <h2>
-          Mögliche Botulinumtoxin-Termine mit <span style="white-space: nowrap;"
-            >Dr. Scheffbuch</span
-          >
-        </h2>
-        <table>
-          <tbody>
-            <tr><td>Mittwoch</td><td>17:00 – 19:00</td></tr>
-            <tr><td>Samstag</td><td>10:00 – 15:00</td></tr>
-          </tbody>
-        </table>
+
+    <div class="locations-grid">
+      <!-- St. Gallen -->
+      <div class="location-card">
+        <div class="card-header">
+          <h2>St. Gallen</h2>
+          <div class="venue-name">Beauty Cosmetics</div>
+          <div class="address">
+            Neugasse 26<br />
+            9000 St. Gallen
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="times-group">
+            <h3>Behandlungszeiten Dr. Scheffbuch</h3>
+            <div class="time-row">
+              <span class="day-label">Mittwoch</span>
+              <span class="hours">17:00 – 19:00</span>
+            </div>
+            <!-- <p class="note">Weitere Termine nach Vereinbarung</p> -->
+          </div>
+
+          <details class="hours-toggle">
+            <summary>Öffnungszeiten Beauty Cosmetics</summary>
+            <div class="hours-content">
+              <div class="time-row">
+                <span>Montag</span><span>08:30 – 19:00</span>
+              </div>
+              <div class="time-row">
+                <span>Dienstag</span><span>08:30 – 19:00</span>
+              </div>
+              <div class="time-row">
+                <span>Mittwoch</span><span>08:30 – 19:00</span>
+              </div>
+              <div class="time-row">
+                <span>Donnerstag</span><span>08:30 – 19:00</span>
+              </div>
+              <div class="time-row">
+                <span>Freitag</span><span>08:30 – 19:00</span>
+              </div>
+              <div class="time-row">
+                <span>Samstag</span><span>08:30 – 16:00</span>
+              </div>
+              <div class="time-row">
+                <span>Sonntag</span><span>Geschlossen</span>
+              </div>
+            </div>
+          </details>
+
+          <div class="contact-actions">
+            <a href="tel:+41712222022" class="action-btn">
+              Telefon: +41 71 222 20 22
+            </a>
+            <a
+              href="https://wa.me/41792208077"
+              target="_blank"
+              rel="noopener"
+              class="action-btn">
+              WhatsApp: +41 79 220 80 77
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="table-wrapper">
-        <h2>Beauty Cosmetics Anrufzeiten</h2>
-        <table>
-          <tbody>
-            <tr><td>Montag</td><td>08:30 – 19:00</td></tr>
-            <tr><td>Dienstag</td><td>08:30 – 19:00</td></tr>
-            <tr><td>Mittwoch</td><td>08:30 – 19:00</td></tr>
-            <tr><td>Donnerstag</td><td>08:30 – 19:00</td></tr>
-            <tr><td>Freitag</td><td>08:30 – 19:00</td></tr>
-            <tr><td>Samstag</td><td>08:30 – 16:00</td></tr>
-            <tr><td>Sonntag</td><td>Geschlossen</td></tr>
-          </tbody>
-        </table>
+
+      <!-- Mels -->
+      <div class="location-card">
+        <div class="card-header">
+          <h2>Mels</h2>
+          <div class="venue-name">House of Beauty</div>
+          <div class="address">
+            Bahnhofstrasse 23<br />
+            8887 Mels
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="times-group">
+            <h3>Behandlungszeiten Dr. Scheffbuch</h3>
+            <div class="time-row">
+              <span class="day-label">Samstag</span>
+              <span class="hours">08:00 – 13:00</span>
+            </div>
+          </div>
+
+          <details class="hours-toggle">
+            <summary>Öffnungszeiten House of Beauty</summary>
+            <div class="hours-content">
+              <div class="time-row">
+                <span>Montag</span><span>08:30 – 18:00</span>
+              </div>
+              <div class="time-row">
+                <span>Dienstag</span><span>08:30 – 20:00</span>
+              </div>
+              <div class="time-row">
+                <span>Mittwoch</span><span>08:30 – 18:00</span>
+              </div>
+              <div class="time-row">
+                <span>Donnerstag</span><span>08:30 – 18:00</span>
+              </div>
+              <div class="time-row">
+                <span>Freitag</span><span>08:00 – 18:30</span>
+              </div>
+              <div class="time-row">
+                <span>Samstag</span><span>08:00 – 12:00</span>
+              </div>
+              <div class="time-row">
+                <span>Sonntag</span><span>Geschlossen</span>
+              </div>
+            </div>
+          </details>
+
+          <div class="contact-actions">
+            <a href="tel:+41817233979" class="action-btn">
+              Telefon: +41 81 723 39 79
+            </a>
+            <div class="spacer"></div>
+          </div>
+        </div>
       </div>
     </div>
-    <iframe
-      title="Google Maps snippet"
-      src="https://www.google.com/maps?q=Beauty+Cosmetics+GmbH+St.+Gallen&t=m&z=16&output=embed"
-      width="100%"
-      height="600px"
-      style="border:0;border-radius: 1.5rem; max-width: 1200px;"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <div class="maps-container">
+      <div class="map-wrapper">
+        <iframe
+          title="Google Maps – Beauty Cosmetics, St. Gallen"
+          src="https://www.google.com/maps?q=Beauty+Cosmetics+GmbH+St.+Gallen&t=m&z=16&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="map-wrapper">
+        <iframe
+          title="Google Maps – House of Beauty, Mels"
+          src="https://www.google.com/maps?q=House+of+Beauty+Bahnhofstrasse+23+8887+Mels&t=m&z=16&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
   </div>
 </section>
+
 <style>
-  section {
-    padding-top: 100px;
-  }
-  .flex-center {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    margin-bottom: 3rem;
+  .wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  .flex-center > h1 {
-    margin: 0;
-  }
-
-  .info-box {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    background: #e5ecf9;
-    border-left: 4px solid var(--color--primary);
-    padding: 0.9rem 1.2rem;
-    border-radius: 0.5rem;
-    font-size: 1.05rem;
-    margin-bottom: 2.2rem;
-  }
-
-  .info-icon {
-    color: var(--color--primary);
-    width: 32px;
-    height: 32px;
-  }
-  .call-button {
-    padding: 0.7rem 1.5rem;
-    border-radius: 2rem;
-    background: var(--color--primary);
-    color: #fff;
-    text-decoration: none;
-  }
-
-  @media (any-hover: hover) {
-    .call-button:hover {
-      background-color: #1f52be;
-    }
-  }
-
-  .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 5rem;
-  }
-
-  .table-wrapper {
-    flex: 1;
-    border-radius: 1rem;
-    padding: 2rem 1.5rem;
-    background-image: linear-gradient(
-      40deg,
-      var(--color--grey) 11%,
-      #e5ecf91a 50%,
-      var(--color--grey) 87%
-    );
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #111827;
   }
 
   h2 {
-    font-size: 1.3rem;
-    margin: 0 0 1.5rem;
+    font-size: 1.5rem;
     color: var(--color--primary);
+    margin: 0 0 0.5rem 0;
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: var(--color--primary);
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+  }
+
+  .info-alert {
+    background-color: #eff6ff;
+    border-left: 4px solid var(--color--primary);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .info-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #111827;
+    font-weight: 500;
+  }
+
+  .info-content p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .info-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--color--primary);
+  }
+
+  /* Locations Grid */
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .location-card {
+    background: #eff6ff;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .card-header {
     text-align: center;
-    min-height: 3.5rem;
+    margin-bottom: 2rem;
   }
 
-  table {
-    width: 100%;
-  }
-  tr:last-child td {
-    border-bottom: none;
+  .venue-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
   }
 
-  td {
-    text-wrap-mode: nowrap;
-    padding: 0.5rem 0.7rem;
-    border-bottom: 1px solid #e5ecf9;
+  .address {
+    font-size: 1.1rem;
+    color: #1f2937;
+    line-height: 1.5;
+    font-weight: 500;
+  }
 
-    &:last-child {
-      text-align: right;
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .time-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.05rem;
+    color: #1f2937;
+    padding: 0.25rem 0;
+    font-weight: 500;
+  }
+
+  .day-label {
+    font-weight: 600;
+  }
+
+  .note {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+
+  /* Details / Hours Toggle */
+  .hours-toggle {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--color--primary);
+  }
+
+  .hours-toggle summary {
+    font-weight: 500;
+    list-style: none; /* Hide default triangle */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hours-toggle summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .hours-toggle summary::before {
+    content: "▶";
+    font-size: 0.6em;
+    transition: transform 0.2s;
+  }
+
+  .hours-toggle[open] summary::before {
+    transform: rotate(90deg);
+  }
+
+  .hours-content {
+    margin-top: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+  }
+
+  .hours-content .time-row {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #374151;
+  }
+
+  /* Buttons */
+  .contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .action-btn {
+    display: block;
+    text-align: left;
+    padding: 0.5rem 0;
+    background: transparent;
+    border: none;
+    color: #374151;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .action-btn:hover {
+    color: var(--color--primary);
+    text-decoration: underline;
+  }
+
+  /* Maps */
+  .maps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .map-wrapper {
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+    .maps-container {
+      grid-template-columns: 1fr;
     }
   }
 </style>
