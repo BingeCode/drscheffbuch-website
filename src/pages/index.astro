@@ -1,17 +1,16 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import HeroSection from "../components/HeroSection.astro";
-import TreatmentTabs from "../components/TreatmentTabs.astro";
+import AboutMe from "../components/AboutMe.astro";
 import Ablauf from "../components/Ablauf.astro";
 import PostTreatment from "../components/PostTreatment.astro";
 import FAQ from "../components/FAQ.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 import GlobalStyles from "../components/GlobalStyles.astro";
-import FillerOverview from "../components/FillerOverview.astro";
-import FillerPrices from "../components/FillerPrices.astro";
-import BotoxPrices from "../components/BotoxPrices.astro";
-import Botox from "../components/Botox.astro";
+import TreatmentsAccordion from "../components/TreatmentsAccordion.astro";
+import PricingAccordion from "../components/PricingAccordion.astro";
+import StickyCTA from "../components/StickyCTA.astro";
 
 const isPreview = import.meta.env.PUBLIC_PREVIEW === "true";
 ---
@@ -28,25 +27,25 @@ const isPreview = import.meta.env.PUBLIC_PREVIEW === "true";
       name="robots"
       content={isPreview ? "noindex,nofollow" : "index,follow"}
     />
-    <title>Dr. Scheffbuch Ästhetische Medizin - St. Gallen</title>
+    <title>Dr. Scheffbuch – Ästhetische Medizin in St. Gallen & Mels</title>
     <meta
-      content="Dr. Scheffbuch Ästhetische Medizin in St. Gallen. Professionelle Botulinumtoxin-Behandlungen und ästhetische Medizin für natürliche Ergebnisse."
+      content="Ästhetische Medizin in St. Gallen & Mels – Botulinumtoxin, Hyaluronfiller und Injektionslipolyse. Ärztliche Behandlungen durch Dr. Nicolas Scheffbuch."
       name="description"
     />
-    <meta content="Dr. Scheffbuch Ästhetische Medizin" property="og:title" />
+    <meta content="Dr. Scheffbuch – Ästhetische Medizin" property="og:title" />
     <meta
-      content="Dr. Scheffbuch Ästhetische Medizin in St. Gallen. Professionelle Botulinumtoxin-Behandlungen und ästhetische Medizin für natürliche Ergebnisse."
+      content="Ästhetische Medizin in St. Gallen & Mels – Botulinumtoxin, Hyaluronfiller und Injektionslipolyse. Ärztliche Behandlungen durch Dr. Nicolas Scheffbuch."
       property="og:description"
     />
     <meta content="https://drscheffbuch.ch/icon.webp" property="og:image" />
     <meta content="https://drscheffbuch.ch/" property="og:url" />
     <meta content="de_CH" property="og:locale" />
     <meta
-      content="Dr. Scheffbuch Ästhetische Medizin"
+      content="Dr. Scheffbuch – Ästhetische Medizin"
       property="twitter:title"
     />
     <meta
-      content="Dr. Scheffbuch Ästhetische Medizin in St. Gallen. Professionelle Botulinumtoxin-Behandlungen und ästhetische Medizin für natürliche Ergebnisse."
+      content="Ästhetische Medizin in St. Gallen & Mels – Botulinumtoxin, Hyaluronfiller und Injektionslipolyse. Ärztliche Behandlungen durch Dr. Nicolas Scheffbuch."
       property="twitter:description"
     />
     <meta
@@ -63,7 +62,7 @@ const isPreview = import.meta.env.PUBLIC_PREVIEW === "true";
         "@context": "https://schema.org",
         "@type": "Physician",
         "name": "Dr. Nicolas Scheffbuch",
-        "description": "Ästhetische Medizin in St. Gallen: Botulinumtoxin-Behandlungen – persönlich, präzise, natürlich.",
+        "description": "Ästhetische Medizin in St. Gallen & Mels: Botulinumtoxin, Hyaluronfiller, Injektionslipolyse – persönlich, präzise, natürlich.",
         "image": "https://drscheffbuch.ch/icon.webp",
         "url": "https://drscheffbuch.ch/",
         "telephone": "+41712222022",
@@ -92,8 +91,8 @@ const isPreview = import.meta.env.PUBLIC_PREVIEW === "true";
           {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": "Saturday",
-            "opens": "10:00",
-            "closes": "15:00"
+            "opens": "08:00",
+            "closes": "13:00"
           }
         ]
       }
@@ -110,25 +109,14 @@ const isPreview = import.meta.env.PUBLIC_PREVIEW === "true";
   <body>
     <Navbar />
     <HeroSection />
-    <TreatmentTabs>
-      <div slot="botox">
-        <Botox />
-        <Ablauf />
-        <PostTreatment />
-        <BotoxPrices />
-      </div>
-
-      <div slot="filler">
-        <FillerOverview />
-        <Ablauf />
-        <PostTreatment />
-        <FillerPrices />
-      </div>
-
-      <div slot="fettweg"></div>
-    </TreatmentTabs>
+    <AboutMe />
+    <TreatmentsAccordion />
+    <Ablauf />
+    <PostTreatment />
+    <PricingAccordion />
     <Contact />
     <FAQ />
     <Footer />
+    <StickyCTA />
   </body>
 </html>

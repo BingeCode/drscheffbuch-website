@@ -1,0 +1,121 @@
+---
+import { Image } from "astro:assets";
+import doctorImage from "../assets/doctor.JPG";
+---
+
+<section id="ueber-mich">
+  <div class="wrapper">
+    <div class="image-container">
+      <Image
+        src={doctorImage}
+        alt="Dr. Nicolas Scheffbuch"
+        width={600}
+        densities={[1.5, 2]}
+      />
+    </div>
+    <div class="text-container">
+      <h2>Über mich</h2>
+      <p>
+        Ich bin Dr. Nicolas Scheffbuch, Facharzt für Allgemeinmedizin (D) mit
+        Schwerpunkt auf ästhetischer Medizin. Mein Medizinstudium habe ich in
+        Wien absolviert, wo ich auch meine klinische Ausbildung durchlaufen und
+        später als Arzt für Allgemeinmedizin gearbeitet habe.
+      </p>
+      <p>
+        Bereits 2018 habe ich meinen ersten Botulinumtoxin-Kurs in Wien
+        absolviert. Seither begleite ich Patientinnen und Patienten mit
+        Botulinumtoxin-, Filler- sowie Injektionslipolyse-Behandlungen
+        (Fett-weg-Spritze) – mit stetiger Weiterbildung bei namhaften Experten
+        hier in der Schweiz, wachsender Erfahrung und einem klaren Fokus auf
+        natürliche, harmonische Ergebnisse.
+      </p>
+      <p>
+        Als Arzt für Allgemeinmedizin ist mir der ganzheitliche Blick auf den
+        Menschen besonders wichtig. Ästhetische Behandlungen verstehe ich nicht
+        als Veränderung, sondern als gezielte, medizinisch fundierte
+        Unterstützung, um Frische, Ausdruck und Proportionen behutsam zu
+        optimieren.
+      </p>
+      <p>
+        Ich arbeite ausschliesslich mit hochwertigen, bewährten Präparaten
+        namhafter Hersteller, unter anderem aus dem Hause Merz, und lege grossen
+        Wert auf präzise Technik, sorgfältige Planung und eine ehrliche
+        Beratung. Alle Behandlungen führe ich persönlich durch.
+      </p>
+      <p>
+        Ergänzend habe ich meine ärztliche Tätigkeit durch ein weiterführendes
+        Studium im Bereich Public Administration an der Harvard University
+        erweitert – mit dem Anspruch, medizinische Qualität, Sicherheit und
+        evidenzbasierte Entscheidungen auch in der ästhetischen Medizin
+        konsequent umzusetzen.
+      </p>
+      <p>
+        Aktuell biete ich meine Behandlungen in St. Gallen und Mels (SG) in
+        Kooperation mit ausgewählten Kosmetikstudios an.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .image-container {
+    flex: 0 0 40%;
+    position: sticky;
+    top: 2rem;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-container {
+    flex: 1;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color--primary);
+    margin-top: 0;
+  }
+
+  p {
+    line-height: 1.6;
+    color: #374151;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 768px) {
+    .wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .image-container {
+      width: 100%;
+      max-width: 400px;
+      position: static;
+    }
+
+    .text-container {
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+</style>

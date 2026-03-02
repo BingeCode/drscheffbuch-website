@@ -2,10 +2,10 @@
 import { Image } from "astro:assets";
 import botoxImage from "../assets/spritze.webp";
 
-const { image, alt } = Astro.props;
+const { image, alt, id } = Astro.props;
 ---
 
-<section>
+<section id={id}>
   <div>
     <div class="flex">
       <div class="image-wrapper">
