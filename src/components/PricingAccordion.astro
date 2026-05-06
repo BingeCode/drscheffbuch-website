@@ -13,7 +13,6 @@ import InfoIcon from "../../public/info.svg";
       <div class="tab-buttons">
         <button class="tab-btn active" data-tab="botox">Botulinumtoxin</button>
         <button class="tab-btn" data-tab="filler">Hyaluronfiller</button>
-        <button class="tab-btn" data-tab="lipolyse">Injektionslipolyse</button>
       </div>
 
       <div class="tab-content active" id="botox">
@@ -111,39 +110,6 @@ import InfoIcon from "../../public/info.svg";
           </div>
         </div>
       </div>
-
-      <div class="tab-content" id="lipolyse">
-        <div class="price-card">
-          <div class="price-header">
-            <h3>Fett-weg-Spritze</h3>
-            <span class="subtext">Richtpreise pro Behandlung</span>
-          </div>
-          <div class="price-list">
-            <div class="price-row">
-              <span>Doppelkinn</span>
-              <span class="price">CHF 350.– bis 450.–</span>
-            </div>
-            <div class="price-row">
-              <span>Oberarme</span>
-              <span class="price">CHF 400.– bis 500.–</span>
-            </div>
-            <div class="price-row">
-              <span>Bauch / Hüften / Flanken</span>
-              <span class="price">CHF 450.– bis 650.–</span>
-            </div>
-            <div class="price-row">
-              <span>Oberschenkel</span>
-              <span class="price">CHF 500.– bis 700.–</span>
-            </div>
-            <div class="info-row">
-              <InfoIcon class="mini-icon" />
-              <small
-                >Für ein optimales Ergebnis sind meist mehrere Sitzungen nötig.</small
-              >
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -160,6 +126,8 @@ import InfoIcon from "../../public/info.svg";
 
       // Add active to clicked
       const tabId = btn.getAttribute("data-tab");
+      if (!tabId) return;
+
       btn.classList.add("active");
       document.getElementById(tabId)?.classList.add("active");
     });
