@@ -7,6 +7,8 @@
 - Main landing page is a single-page section layout: `src/pages/index.astro` composes components and uses anchor navigation (`#start`, `#preise`, `#faq`, …) from `src/components/Navbar.astro`.
 - Legal pages use a shared layout: `src/pages/{impressum,datenschutz}.astro` wrap content with `src/layouts/SubPageLayout.astro`.
 
+Never touch the docs/folder directly; it’s generated output. Make all changes in src/ and rebuild to update docs/.
+
 ## How to work locally
 
 - Install deps: `npm install` (or `bun install`; `bun.lock` is present)
